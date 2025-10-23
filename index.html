@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMINOS - nagi先生のオンライン伴奏レッスン</title>
+    <meta name="description" content="プロの伴奏者nagi先生が教える、オンライン伴奏レッスン。ピアノ伴奏の技術を基礎から実践まで丁寧に指導します。">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="LUMINOS - nagi先生のオンライン伴奏レッスン">
+    <meta property="og:description" content="プロの伴奏者nagi先生が教える、オンライン伴奏レッスン。">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/f47b25/ffffff?text=LUMINOS">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f47b25',
+                        'primary-dark': '#d66a1f',
+                        'primary-light': '#ff8c3a',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Noto Sans JP', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+    
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #f47b25 0%, #ff8c3a 50%, #ffa057 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(244, 123, 37, 0.2);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            max-height: 500px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #f47b25, #ff8c3a);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(244, 123, 37, 0.4);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <span class="material-symbols-outlined text-primary text-3xl">piano</span>
+                    <span class="text-2xl font-bold text-primary">LUMINOS</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="#concept" class="hover:text-primary transition">コンセプト</a></li>
+                    <li><a href="#instructor" class="hover:text-primary transition">講師紹介</a></li>
+                    <li><a href="#qa" class="hover:text-primary transition">Q&A</a></li>
+                    <li><a href="#testimonials" class="hover:text-primary transition">利用者の声</a></li>
+                    <li><a href="#gallery" class="hover:text-primary transition">成果物</a></li>
+                </ul>
+                
+                <a href="https://lin.ee/2Z2p07i" target="_blank" class="btn-primary text-white px-6 py-2 rounded-full font-semibold">
+                    公式LINEへ
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white pt-32 pb-20 px-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                音楽の輝きを<br>あなたの手に
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-95 max-w-3xl mx-auto">
+                プロの伴奏者nagi先生が、あなたのピアノ伴奏技術を<br class="hidden md:block">
+                基礎から実践まで丁寧に指導します
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://lin.ee/2Z2p07i" target="_blank" class="bg-white text-primary px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-100 transition transform hover:scale-105 shadow-xl">
+                    無料相談を申し込む
+                </a>
+                <a href="#concept" class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-primary transition">
+                    詳しく見る
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concept Section -->
+    <section id="concept" class="py-20 px-4 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
+                <span class="text-primary">LUMINOS</span>の特徴
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-primary text-4xl">school</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">プロから学ぶ</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        現役で活躍するプロの伴奏者nagi先生から、実践的な伴奏技術を直接学べます。
+                    </p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-primary text-4xl">device_hub</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">完全オンライン</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        自宅にいながら、質の高いレッスンを受講可能。時間と場所に縛られません。
+                    </p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-primary text-4xl">favorite</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">個別サポート</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        一人ひとりのレベルと目標に合わせた、きめ細やかな指導を行います。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructor Section -->
+    <section id="instructor" class="py-20 px-4 bg-white">
+        <div class="container mx-auto max-w-5xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
+                講師紹介
+            </h2>
+            
+            <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 md:p-12 shadow-xl">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="flex-shrink-0">
+                        <div class="w-48 h-48 bg-gradient-to-br from-primary to-primary-light rounded-full flex items-center justify-center shadow-2xl">
+                            <span class="material-symbols-outlined text-white text-8xl">person</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-1">
+                        <h3 class="text-3xl font-bold mb-2 text-gray-900">nagi 先生</h3>
+                        <p class="text-primary font-semibold mb-6 text-lg">プロ伴奏者 / 音楽教育者</p>
+                        
+                        <div class="space-y-4 text-gray-700 leading-relaxed">
+                            <p>
+                                武蔵野音楽大学ピアノ科卒業後、プロの伴奏者として10年以上のキャリアを積む。
+                            </p>
+                            <p>
+                                声楽、器楽の伴奏を中心に、コンサート、コンクール、レコーディングなど、幅広い現場で活躍。
+                            </p>
+                            <p class="font-semibold text-primary">
+                                「伴奏は単なる脇役ではなく、音楽を共に創る大切なパートナー」をモットーに、実践的な技術と音楽性の両面から指導します。
+                            </p>
+                        </div>
+                        
+                        <div class="mt-6 flex flex-wrap gap-3">
+                            <span class="bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold">武蔵野音大卒</span>
+                            <span class="bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold">10年以上の実績</span>
+                            <span class="bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold">声楽伴奏専門</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Q&A Section -->
+    <section id="qa" class="py-20 px-4 bg-gray-50">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
+                よくある質問
+            </h2>
+            
+            <div class="space-y-4">
+                <!-- Q1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="accordion-btn w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition" onclick="toggleAccordion(this)">
+                        <span class="font-bold text-lg">初心者でも受講できますか？</span>
+                        <span class="material-symbols-outlined text-primary transition-transform">expand_more</span>
+                    </button>
+                    <div class="accordion-content px-6 pb-6">
+                        <p class="text-gray-600 leading-relaxed">
+                            はい、もちろんです！基礎から丁寧に指導しますので、伴奏経験がない方でも安心して受講いただけます。あなたのレベルに合わせてカリキュラムを組みます。
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Q2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="accordion-btn w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition" onclick="toggleAccordion(this)">
+                        <span class="font-bold text-lg">レッスンの頻度はどのくらいですか？</span>
+                        <span class="material-symbols-outlined text-primary transition-transform">expand_more</span>
+                    </button>
+                    <div class="accordion-content px-6 pb-6">
+                        <p class="text-gray-600 leading-relaxed">
+                            月2回から月4回まで、ご希望に応じて調整可能です。忙しい方でも無理なく続けられるよう、柔軟にスケジューリングします。
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Q3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="accordion-btn w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition" onclick="toggleAccordion(this)">
+                        <span class="font-bold text-lg">必要な機材はありますか？</span>
+                        <span class="material-symbols-outlined text-primary transition-transform">expand_more</span>
+                    </button>
+                    <div class="accordion-content px-6 pb-6">
+                        <p class="text-gray-600 leading-relaxed">
+                            ピアノ（または電子ピアノ）、インターネット環境、Zoomが使えるデバイス（PC、タブレット、スマホ）があれば受講できます。
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Q4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="accordion-btn w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition" onclick="toggleAccordion(this)">
+                        <span class="font-bold text-lg">料金はどのくらいですか？</span>
+                        <span class="material-symbols-outlined text-primary transition-transform">expand_more</span>
+                    </button>
+                    <div class="accordion-content px-6 pb-6">
+                        <p class="text-gray-600 leading-relaxed">
+                            詳細な料金プランは、公式LINEにてご案内しております。まずは無料相談で、あなたの目標や希望をお聞かせください。
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Q5 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="accordion-btn w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition" onclick="toggleAccordion(this)">
+                        <span class="font-bold text-lg">体験レッスンはありますか？</span>
+                        <span class="material-symbols-outlined text-primary transition-transform">expand_more</span>
+                    </button>
+                    <div class="accordion-content px-6 pb-6">
+                        <p class="text-gray-600 leading-relaxed">
+                            はい、初回無料相談を実施しています。公式LINEからお気軽にお問い合わせください。レッスン内容や進め方について詳しくご説明します。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 px-4 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
+                利用者の声
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg border-2 border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                            <span class="material-symbols-outlined text-white">person</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-900">Y.Kさん（30代・会社員）</p>
+                            <div class="flex text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed italic">
+                        「伴奏の基礎から実践まで、とても丁寧に教えていただきました。nagi先生のレッスンを受けてから、音楽の聴き方が変わり、伴奏することが楽しくなりました！」
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg border-2 border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                            <span class="material-symbols-outlined text-white">person</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-900">M.Tさん（20代・音大生）</p>
+                            <div class="flex text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed italic">
+                        「プロの視点からのアドバイスがとても勉強になります。オンラインなので、地方に住んでいる私でも受講できて本当に助かっています！」
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg border-2 border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                            <span class="material-symbols-outlined text-white">person</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-900">S.Hさん（40代・ピアノ講師）</p>
+                            <div class="flex text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed italic">
+                        「生徒の伴奏をする機会が増え、自信を持って弾けるようになりました。nagi先生の指導は具体的でわかりやすく、すぐに実践できます。」
+                    </p>
+                </div>
+                
+                <!-- Testimonial 4 -->
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg border-2 border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                            <span class="material-symbols-outlined text-white">person</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-900">A.Nさん（50代・主婦）</p>
+                            <div class="flex text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed italic">
+                        「久しぶりにピアノを再開し、伴奏の世界に魅了されました。nagi先生の優しく丁寧な指導のおかげで、楽しく続けられています。」
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 px-4 bg-gray-50">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
+                成果物ギャラリー
+            </h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <!-- Gallery Item 1 -->
+                <div class="aspect-square bg-gradient-to-br from-primary/20 to-primary/40 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group">
+                    <div class="w-full h-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-6xl group-hover:scale-110 transition">music_note</span>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="aspect-square bg-gradient-to-br from-primary/30 to-primary/50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group">
+                    <div class="w-full h-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-6xl group-hover:scale-110 transition">piano</span>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="aspect-square bg-gradient-to-br from-primary/40 to-primary/60 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group">
+                    <div class="w-full h-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-6xl group-hover:scale-110 transition">mic</span>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="aspect-square bg-gradient-to-br from-primary/50 to-primary/70 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group">
+                    <div class="w-full h-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-6xl group-hover:scale-110 transition">library_music</span>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="aspect-square bg-gradient-to-br from-primary/60 to-primary/80 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group">
+                    <div class="w-full h-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-6xl group-hover:scale-110 transition">headphones</span>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="aspect-square bg-gradient-to-br from-primary/70 to-primary rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group">
+                    <div class="w-full h-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-6xl group-hover:scale-110 transition">queue_music</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-center text-gray-500 mt-8 text-sm">
+                ※ 実際のレッスン風景や演奏動画は公式LINEでご紹介しています
+            </p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 bg-gradient-to-br from-primary to-primary-light text-white">
+        <div class="container mx-auto text-center max-w-4xl">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                あなたの音楽人生を<br class="md:hidden">輝かせませんか？
+            </h2>
+            <p class="text-xl mb-10 opacity-95">
+                まずは無料相談から。<br>
+                公式LINEで、あなたの目標や悩みをお聞かせください。
+            </p>
+            <a href="https://lin.ee/2Z2p07i" target="_blank" class="inline-block bg-white text-primary px-10 py-5 rounded-full text-xl font-bold hover:bg-gray-100 transition transform hover:scale-105 shadow-2xl">
+                <span class="flex items-center gap-2">
+                    <span class="material-symbols-outlined">chat</span>
+                    公式LINEで無料相談
+                </span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="material-symbols-outlined text-primary text-3xl">piano</span>
+                        <span class="text-2xl font-bold">LUMINOS</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        プロの伴奏者nagi先生による<br>
+                        オンライン伴奏レッスン
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">クイックリンク</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#concept" class="hover:text-primary transition">コンセプト</a></li>
+                        <li><a href="#instructor" class="hover:text-primary transition">講師紹介</a></li>
+                        <li><a href="#qa" class="hover:text-primary transition">Q&A</a></li>
+                        <li><a href="#testimonials" class="hover:text-primary transition">利用者の声</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">お問い合わせ</h4>
+                    <a href="https://lin.ee/2Z2p07i" target="_blank" class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark transition px-4 py-2 rounded-full text-sm font-semibold">
+                        <span class="material-symbols-outlined">chat</span>
+                        公式LINE
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+                <p class="mb-2">
+                    <a href="privacy.html" class="hover:text-primary transition">プライバシーポリシー</a>
+                </p>
+                <p>&copy; 2024 LUMINOS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Accordion -->
+    <script>
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.material-symbols-outlined');
+            
+            // Close all other accordions
+            document.querySelectorAll('.accordion-content').forEach(item => {
+                if (item !== content) {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('.material-symbols-outlined').style.transform = 'rotate(0deg)';
+                }
+            });
+            
+            // Toggle current accordion
+            content.classList.toggle('active');
+            
+            if (content.classList.contains('active')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+
+</body>
+</html>

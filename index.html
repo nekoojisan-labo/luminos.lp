@@ -1,515 +1,315 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html class="light" lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUMINOS - nagi先生のオンライン伴奏レッスン</title>
-    <meta name="description" content="プロの伴奏者nagi先生が教える、オンライン伴奏レッスン。ピアノ伴奏の技術を基礎から実践まで丁寧に指導します。">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>LUMINOS - AIクリエイティブコミュニティ</title>
+    <meta name="description" content="AIとクリエイティブで、あなたの可能性を広げよう。LUMINOSは、未経験からでも安心して始められるAI×クリエイティブコミュニティです。">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="LUMINOS - nagi先生のオンライン伴奏レッスン">
-    <meta property="og:description" content="プロの伴奏者nagi先生が教える、オンライン伴奏レッスン。">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630/f47b25/ffffff?text=LUMINOS">
+    <meta property="og:title" content="LUMINOS - AIクリエイティブコミュニティ">
+    <meta property="og:description" content="AIとクリエイティブで、あなたの可能性を広げよう">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
     <script>
         tailwind.config = {
+            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        primary: '#f47b25',
-                        'primary-dark': '#d66a1f',
-                        'primary-light': '#ff8c3a',
+                        "primary": "#f47b25",
+                        "background-light": "#fcfaf8",
+                        "background-dark": "#221710",
+                        "text-light": "#1c130d",
+                        "text-dark": "#fcfaf8",
+                        "card-light": "#ffffff",
+                        "card-dark": "#2a1c13",
+                        "border-light": "#f4ece7",
+                        "border-dark": "#3a2a1f",
+                        "muted-light": "#9c6c49",
+                        "muted-dark": "#a38b77"
                     },
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'Noto Sans JP', 'sans-serif'],
-                    }
-                }
-            }
+                        "display": ["Plus Jakarta Sans", "Noto Sans JP", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.75rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
         }
     </script>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
-    
     <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        
         html {
             scroll-behavior: smooth;
         }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, #f47b25 0%, #ff8c3a 50%, #ffa057 100%);
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(244, 123, 37, 0.2);
-        }
-        
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        
-        .accordion-content.active {
-            max-height: 500px;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #f47b25, #ff8c3a);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(244, 123, 37, 0.4);
-        }
     </style>
 </head>
-<body class="font-sans text-gray-800">
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+    <div class="relative flex w-full flex-col overflow-x-hidden">
+        <div class="layout-container flex flex-col w-full">
+            <div class="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 flex flex-1 justify-center py-3" id="home">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1 w-full">
+                    <!-- Header -->
+                    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-4 sm:px-6 py-3 fixed top-3 sm:top-5 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] sm:w-[calc(100%-2.5rem)] max-w-[960px] bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-50 rounded-lg">
+                        <div class="flex items-center gap-3">
+                            <div class="size-5 sm:size-6 text-primary">
+                                <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <h2 class="text-text-light dark:text-text-dark text-lg sm:text-xl font-bold leading-tight tracking-[-0.015em]">LUMINOS</h2>
+                        </div>
+                        <div class="hidden md:flex flex-1 justify-end gap-6">
+                            <div class="flex items-center gap-6">
+                                <a class="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#concept">コンセプト</a>
+                                <a class="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#instructors">講師紹介</a>
+                                <a class="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#qa">Q&A</a>
+                                <a class="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#gallery">成果物</a>
+                            </div>
+                            <a class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity" href="https://lin.ee/2Z2p07i" target="_blank">
+                                <span class="truncate">公式LINE</span>
+                            </a>
+                        </div>
+                        <div class="md:hidden">
+                            <a href="https://lin.ee/2Z2p07i" target="_blank" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                                <span class="truncate">公式LINE</span>
+                            </a>
+                        </div>
+                    </header>
 
-    <!-- Header / Navigation -->
-    <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
-        <nav class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <span class="material-symbols-outlined text-primary text-3xl">piano</span>
-                    <span class="text-2xl font-bold text-primary">LUMINOS</span>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <ul class="hidden md:flex space-x-8">
-                    <li><a href="#concept" class="hover:text-primary transition">コンセプト</a></li>
-                    <li><a href="#instructor" class="hover:text-primary transition">講師紹介</a></li>
-                    <li><a href="#qa" class="hover:text-primary transition">Q&A</a></li>
-                    <li><a href="#testimonials" class="hover:text-primary transition">利用者の声</a></li>
-                    <li><a href="#gallery" class="hover:text-primary transition">成果物</a></li>
-                </ul>
-                
-                <a href="https://lin.ee/2Z2p07i" target="_blank" class="btn-primary text-white px-6 py-2 rounded-full font-semibold">
-                    公式LINEへ
-                </a>
-            </div>
-        </nav>
-    </header>
+                    <main class="mt-16 sm:mt-20">
+                        <!-- Hero Section -->
+                        <section class="mb-12 sm:mb-16" id="hero">
+                            <div class="@container">
+                                <div class="@[480px]:p-0">
+                                    <div class="flex min-h-[400px] sm:min-h-[480px] flex-col gap-4 sm:gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://cdn.pixabay.com/photo/2018/03/10/12/00/teamwork-3213924_1280.jpg");'>
+                                        <div class="flex flex-col gap-3 sm:gap-4 text-center">
+                                            <h1 class="text-white text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-[-0.033em]">
+                                                閃きをカタチに
+                                            </h1>
+                                            <h2 class="text-white text-sm sm:text-base md:text-lg font-normal leading-normal">
+                                                AIとクリエイティブで、あなたの可能性を広げよう
+                                            </h2>
+                                        </div>
+                                        <a class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 sm:h-12 md:h-14 px-5 sm:px-6 md:px-8 bg-primary text-white text-sm sm:text-base md:text-lg font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity" href="https://lin.ee/2Z2p07i" target="_blank">
+                                            <span class="truncate">LUMINOSに参加する</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
 
-    <!-- Hero Section -->
-    <section class="hero-gradient text-white pt-32 pb-20 px-4">
-        <div class="container mx-auto text-center">
-            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
-                音楽の輝きを<br>あなたの手に
-            </h1>
-            <p class="text-xl md:text-2xl mb-8 opacity-95 max-w-3xl mx-auto">
-                プロの伴奏者nagi先生が、あなたのピアノ伴奏技術を<br class="hidden md:block">
-                基礎から実践まで丁寧に指導します
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="https://lin.ee/2Z2p07i" target="_blank" class="bg-white text-primary px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-100 transition transform hover:scale-105 shadow-xl">
-                    無料相談を申し込む
-                </a>
-                <a href="#concept" class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-primary transition">
-                    詳しく見る
-                </a>
-            </div>
-        </div>
-    </section>
+                        <!-- Concept Section -->
+                        <section class="mb-12 sm:mb-16 scroll-mt-20 sm:scroll-mt-24" id="concept">
+                            <div class="flex flex-col gap-6 sm:gap-8 py-6 sm:py-8 @container">
+                                <div class="flex flex-col gap-3 sm:gap-4 text-center items-center">
+                                    <h2 class="text-text-light dark:text-text-dark tracking-light text-2xl sm:text-3xl md:text-4xl font-bold leading-tight max-w-[720px]">
+                                        LUMINOSとは
+                                    </h2>
+                                    <p class="text-muted-light dark:text-muted-dark text-sm sm:text-base font-normal leading-relaxed max-w-[720px] px-4">
+                                        LUMINOSは、AIとクリエイティブを融合させ、新たな価値を創造することを目指すコミュニティです。未経験からでも安心して始められる環境で、仲間と共に学び、成長し、収益化を目指すことができます。
+                                    </p>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 p-0">
+                                    <div class="flex flex-1 gap-3 sm:gap-4 rounded-xl border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark p-5 sm:p-6 flex-col items-center text-center">
+                                        <div class="text-primary bg-primary/20 p-2.5 sm:p-3 rounded-full">
+                                            <span class="material-symbols-outlined !text-3xl sm:!text-4xl">neurology</span>
+                                        </div>
+                                        <div class="flex flex-col gap-1">
+                                            <h3 class="text-text-light dark:text-text-dark text-base sm:text-lg font-bold leading-tight">AI活用</h3>
+                                            <p class="text-muted-light dark:text-muted-dark text-xs sm:text-sm font-normal leading-relaxed">最新のAIツールを活用し、あなたのアイデアを素早くカタチにします。</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-1 gap-3 sm:gap-4 rounded-xl border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark p-5 sm:p-6 flex-col items-center text-center">
+                                        <div class="text-primary bg-primary/20 p-2.5 sm:p-3 rounded-full">
+                                            <span class="material-symbols-outlined !text-3xl sm:!text-4xl">palette</span>
+                                        </div>
+                                        <div class="flex flex-col gap-1">
+                                            <h3 class="text-text-light dark:text-text-dark text-base sm:text-lg font-bold leading-tight">クリエイティブ</h3>
+                                            <p class="text-muted-light dark:text-muted-dark text-xs sm:text-sm font-normal leading-relaxed">デザイン、イラスト、動画など、様々なクリエイティブ分野で活躍できます。</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-1 gap-3 sm:gap-4 rounded-xl border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark p-5 sm:p-6 flex-col items-center text-center">
+                                        <div class="text-primary bg-primary/20 p-2.5 sm:p-3 rounded-full">
+                                            <span class="material-symbols-outlined !text-3xl sm:!text-4xl">payments</span>
+                                        </div>
+                                        <div class="flex flex-col gap-1">
+                                            <h3 class="text-text-light dark:text-text-dark text-base sm:text-lg font-bold leading-tight">収益化</h3>
+                                            <p class="text-muted-light dark:text-muted-dark text-xs sm:text-sm font-normal leading-relaxed">制作した作品を販売し、クリエイティブ活動で収益を得る方法を学びます。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
 
-    <!-- Concept Section -->
-    <section id="concept" class="py-20 px-4 bg-gray-50">
-        <div class="container mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
-                <span class="text-primary">LUMINOS</span>の特徴
-            </h2>
-            
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Card 1 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
-                    <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                        <span class="material-symbols-outlined text-primary text-4xl">school</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">プロから学ぶ</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        現役で活躍するプロの伴奏者nagi先生から、実践的な伴奏技術を直接学べます。
-                    </p>
-                </div>
-                
-                <!-- Card 2 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
-                    <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                        <span class="material-symbols-outlined text-primary text-4xl">device_hub</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">完全オンライン</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        自宅にいながら、質の高いレッスンを受講可能。時間と場所に縛られません。
-                    </p>
-                </div>
-                
-                <!-- Card 3 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
-                    <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                        <span class="material-symbols-outlined text-primary text-4xl">favorite</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">個別サポート</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        一人ひとりのレベルと目標に合わせた、きめ細やかな指導を行います。
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+                        <!-- Instructors Section -->
+                        <section class="mb-12 sm:mb-16 scroll-mt-20 sm:scroll-mt-24" id="instructors">
+                            <h2 class="text-text-light dark:text-text-dark text-center text-2xl sm:text-3xl md:text-[32px] font-bold leading-tight tracking-[-0.015em] pb-6 sm:pb-8 pt-3 sm:pt-5">講師紹介</h2>
+                            <div class="flex overflow-x-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                                <div class="flex items-stretch p-2 sm:p-4 gap-4 sm:gap-6">
+                                    <div class="flex h-full flex-1 flex-col gap-3 sm:gap-4 rounded-xl bg-card-light dark:bg-card-dark shadow-lg shadow-black/5 min-w-64 sm:min-w-72">
+                                        <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-t-xl" style='background-image: url("images/instructor1.jpg");'></div>
+                                        <div class="flex flex-col flex-1 justify-between p-3 sm:p-4 pt-0 gap-3 sm:gap-4">
+                                            <div>
+                                                <p class="text-text-light dark:text-text-dark text-base sm:text-lg font-bold leading-normal">nagi先生</p>
+                                                <p class="text-muted-light dark:text-muted-dark text-xs sm:text-sm font-normal leading-relaxed">AIクリエイター。大手企業向けのAIコンテンツ制作を担当。</p>
+                                            </div>
+                                            <a href="https://lin.ee/2Z2p07i" target="_blank" class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 sm:h-10 px-3 sm:px-4 bg-primary/20 text-primary text-xs sm:text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/30 transition-colors">
+                                                <span class="truncate">詳しく見る</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="flex h-full flex-1 flex-col gap-3 sm:gap-4 rounded-xl bg-card-light dark:bg-card-dark shadow-lg shadow-black/5 min-w-64 sm:min-w-72">
+                                        <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-t-xl" style='background-image: url("https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg");'></div>
+                                        <div class="flex flex-col flex-1 justify-between p-3 sm:p-4 pt-0 gap-3 sm:gap-4">
+                                            <div>
+                                                <p class="text-text-light dark:text-text-dark text-base sm:text-lg font-bold leading-normal">講師B</p>
+                                                <p class="text-muted-light dark:text-muted-dark text-xs sm:text-sm font-normal leading-relaxed">動画クリエイター。YouTubeチャンネル登録者数10万人。</p>
+                                            </div>
+                                            <a href="https://lin.ee/2Z2p07i" target="_blank" class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 sm:h-10 px-3 sm:px-4 bg-primary/20 text-primary text-xs sm:text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/30 transition-colors">
+                                                <span class="truncate">詳しく見る</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="flex h-full flex-1 flex-col gap-3 sm:gap-4 rounded-xl bg-card-light dark:bg-card-dark shadow-lg shadow-black/5 min-w-64 sm:min-w-72">
+                                        <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-t-xl" style='background-image: url("https://cdn.pixabay.com/photo/2017/08/01/08/29/woman-2563491_1280.jpg");'></div>
+                                        <div class="flex flex-col flex-1 justify-between p-3 sm:p-4 pt-0 gap-3 sm:gap-4">
+                                            <div>
+                                                <p class="text-text-light dark:text-text-dark text-base sm:text-lg font-bold leading-normal">講師C</p>
+                                                <p class="text-muted-light dark:text-muted-dark text-xs sm:text-sm font-normal leading-relaxed">Webデザイナー。数々の企業のLPデザインを手掛ける。</p>
+                                            </div>
+                                            <a href="https://lin.ee/2Z2p07i" target="_blank" class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 sm:h-10 px-3 sm:px-4 bg-primary/20 text-primary text-xs sm:text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/30 transition-colors">
+                                                <span class="truncate">詳しく見る</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
 
-    <!-- Instructor Section -->
-    <section id="instructor" class="py-20 px-4 bg-white">
-        <div class="container mx-auto max-w-5xl">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
-                講師紹介
-            </h2>
-            
-            <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 md:p-12 shadow-xl">
-                <div class="flex flex-col md:flex-row gap-8 items-center">
-                    <div class="flex-shrink-0">
-                        <div class="w-48 h-48 bg-gradient-to-br from-primary to-primary-light rounded-full flex items-center justify-center shadow-2xl">
-                            <span class="material-symbols-outlined text-white text-8xl">person</span>
-                        </div>
-                    </div>
-                    
-                    <div class="flex-1">
-                        <h3 class="text-3xl font-bold mb-2 text-gray-900">nagi 先生</h3>
-                        <p class="text-primary font-semibold mb-6 text-lg">プロ伴奏者 / 音楽教育者</p>
-                        
-                        <div class="space-y-4 text-gray-700 leading-relaxed">
-                            <p>
-                                武蔵野音楽大学ピアノ科卒業後、プロの伴奏者として10年以上のキャリアを積む。
-                            </p>
-                            <p>
-                                声楽、器楽の伴奏を中心に、コンサート、コンクール、レコーディングなど、幅広い現場で活躍。
-                            </p>
-                            <p class="font-semibold text-primary">
-                                「伴奏は単なる脇役ではなく、音楽を共に創る大切なパートナー」をモットーに、実践的な技術と音楽性の両面から指導します。
-                            </p>
-                        </div>
-                        
-                        <div class="mt-6 flex flex-wrap gap-3">
-                            <span class="bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold">武蔵野音大卒</span>
-                            <span class="bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold">10年以上の実績</span>
-                            <span class="bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold">声楽伴奏専門</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                        <!-- Q&A Section -->
+                        <section class="mb-12 sm:mb-16 scroll-mt-20 sm:scroll-mt-24" id="qa">
+                            <h2 class="text-text-light dark:text-text-dark text-center text-2xl sm:text-3xl md:text-[32px] font-bold leading-tight tracking-[-0.015em] pb-6 sm:pb-8 pt-3 sm:pt-5">Q&A / 利用者の声</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+                                <div class="flex flex-col gap-3 sm:gap-4">
+                                    <details class="group border-b border-border-light dark:border-border-dark pb-3 sm:pb-4">
+                                        <summary class="flex cursor-pointer items-center justify-between text-text-light dark:text-text-dark text-sm sm:text-base font-medium list-none">
+                                            <span>未経験でも参加できますか？</span>
+                                            <span class="transition-transform duration-300 group-open:rotate-180">
+                                                <span class="material-symbols-outlined">expand_more</span>
+                                            </span>
+                                        </summary>
+                                        <p class="mt-2 text-muted-light dark:text-muted-dark text-xs sm:text-sm">はい、もちろんです。LUMINOSは未経験者の方を大歓迎しています。基礎から学べるカリキュラムや、講師による手厚いサポートがあるので安心してご参加ください。</p>
+                                    </details>
+                                    <details class="group border-b border-border-light dark:border-border-dark pb-3 sm:pb-4">
+                                        <summary class="flex cursor-pointer items-center justify-between text-text-light dark:text-text-dark text-sm sm:text-base font-medium list-none">
+                                            <span>どんなスキルが身に付きますか？</span>
+                                            <span class="transition-transform duration-300 group-open:rotate-180">
+                                                <span class="material-symbols-outlined">expand_more</span>
+                                            </span>
+                                        </summary>
+                                        <p class="mt-2 text-muted-light dark:text-muted-dark text-xs sm:text-sm">最新のAIツールの活用方法、デザインの基礎、イラスト制作、動画編集、そして制作した作品を収益化するためのノウハウなどが身に付きます。</p>
+                                    </details>
+                                    <details class="group border-b border-border-light dark:border-border-dark pb-3 sm:pb-4">
+                                        <summary class="flex cursor-pointer items-center justify-between text-text-light dark:text-text-dark text-sm sm:text-base font-medium list-none">
+                                            <span>他のメンバーと交流できますか？</span>
+                                            <span class="transition-transform duration-300 group-open:rotate-180">
+                                                <span class="material-symbols-outlined">expand_more</span>
+                                            </span>
+                                        </summary>
+                                        <p class="mt-2 text-muted-light dark:text-muted-dark text-xs sm:text-sm">はい、専用のオンラインコミュニティで、他のメンバーといつでも交流できます。質問や情報交換、共同制作などを通じて、仲間と切磋琢磨できる環境です。</p>
+                                    </details>
+                                </div>
+                                <div class="flex flex-col gap-4 sm:gap-6">
+                                    <div class="flex flex-col gap-3 sm:gap-4 rounded-xl bg-card-light dark:bg-card-dark shadow-lg shadow-black/5 p-4 sm:p-6">
+                                        <div class="flex items-center gap-3 sm:gap-4">
+                                            <img class="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover" src="https://cdn.pixabay.com/photo/2016/11/29/03/35/girl-1867092_1280.jpg"/>
+                                            <div>
+                                                <p class="font-bold text-text-light dark:text-text-dark text-sm sm:text-base">田中さん (20代)</p>
+                                                <p class="text-xs sm:text-sm text-muted-light dark:text-muted-dark">会社員</p>
+                                            </div>
+                                        </div>
+                                        <p class="text-xs sm:text-sm text-text-light dark:text-text-dark leading-relaxed">「一人では挫折しがちな創作活動も、仲間がいるから続けられます！フィードバックをもらえるのが嬉しいです。」</p>
+                                    </div>
+                                    <div class="flex flex-col gap-3 sm:gap-4 rounded-xl bg-card-light dark:bg-card-dark shadow-lg shadow-black/5 p-4 sm:p-6">
+                                        <div class="flex items-center gap-3 sm:gap-4">
+                                            <img class="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover" src="https://cdn.pixabay.com/photo/2016/11/21/14/53/man-1845814_1280.jpg"/>
+                                            <div>
+                                                <p class="font-bold text-text-light dark:text-text-dark text-sm sm:text-base">鈴木さん (30代)</p>
+                                                <p class="text-xs sm:text-sm text-muted-light dark:text-muted-dark">フリーランス</p>
+                                            </div>
+                                        </div>
+                                        <p class="text-xs sm:text-sm text-text-light dark:text-text-dark leading-relaxed">「AIのおかげでアイデアを形にするスピードが格段に上がりました。LUMINOSで新しい表現方法に出会えました。」</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
 
-    <!-- Q&A Section -->
-    <section id="qa" class="py-20 px-4 bg-gray-50">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
-                よくある質問
-            </h2>
-            
-            <div class="space-y-4">
-                <!-- Q1 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <button class="accordion-btn w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition" onclick="toggleAccordion(this)">
-                        <span class="font-bold text-lg">初心者でも受講できますか？</span>
-                        <span class="material-symbols-outlined text-primary transition-transform">expand_more</span>
-                    </button>
-                    <div class="accordion-content px-6 pb-6">
-                        <p class="text-gray-600 leading-relaxed">
-                            はい、もちろんです！基礎から丁寧に指導しますので、伴奏経験がない方でも安心して受講いただけます。あなたのレベルに合わせてカリキュラムを組みます。
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Q2 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <button class="accordion-btn w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition" onclick="toggleAccordion(this)">
-                        <span class="font-bold text-lg">レッスンの頻度はどのくらいですか？</span>
-                        <span class="material-symbols-outlined text-primary transition-transform">expand_more</span>
-                    </button>
-                    <div class="accordion-content px-6 pb-6">
-                        <p class="text-gray-600 leading-relaxed">
-                            月2回から月4回まで、ご希望に応じて調整可能です。忙しい方でも無理なく続けられるよう、柔軟にスケジューリングします。
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Q3 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <button class="accordion-btn w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition" onclick="toggleAccordion(this)">
-                        <span class="font-bold text-lg">必要な機材はありますか？</span>
-                        <span class="material-symbols-outlined text-primary transition-transform">expand_more</span>
-                    </button>
-                    <div class="accordion-content px-6 pb-6">
-                        <p class="text-gray-600 leading-relaxed">
-                            ピアノ（または電子ピアノ）、インターネット環境、Zoomが使えるデバイス（PC、タブレット、スマホ）があれば受講できます。
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Q4 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <button class="accordion-btn w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition" onclick="toggleAccordion(this)">
-                        <span class="font-bold text-lg">料金はどのくらいですか？</span>
-                        <span class="material-symbols-outlined text-primary transition-transform">expand_more</span>
-                    </button>
-                    <div class="accordion-content px-6 pb-6">
-                        <p class="text-gray-600 leading-relaxed">
-                            詳細な料金プランは、公式LINEにてご案内しております。まずは無料相談で、あなたの目標や希望をお聞かせください。
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Q5 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <button class="accordion-btn w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition" onclick="toggleAccordion(this)">
-                        <span class="font-bold text-lg">体験レッスンはありますか？</span>
-                        <span class="material-symbols-outlined text-primary transition-transform">expand_more</span>
-                    </button>
-                    <div class="accordion-content px-6 pb-6">
-                        <p class="text-gray-600 leading-relaxed">
-                            はい、初回無料相談を実施しています。公式LINEからお気軽にお問い合わせください。レッスン内容や進め方について詳しくご説明します。
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                        <!-- Gallery Section -->
+                        <section class="mb-12 sm:mb-16 scroll-mt-20 sm:scroll-mt-24" id="gallery">
+                            <h2 class="text-text-light dark:text-text-dark text-center text-2xl sm:text-3xl md:text-[32px] font-bold leading-tight tracking-[-0.015em] pb-6 sm:pb-8 pt-3 sm:pt-5">成果物ギャラリー</h2>
+                            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+                                <img class="rounded-lg object-cover w-full h-full aspect-square cursor-pointer hover:opacity-80 transition-opacity" src="https://cdn.pixabay.com/photo/2023/01/26/22/12/ai-generated-7747152_1280.jpg"/>
+                                <img class="rounded-lg object-cover w-full h-full aspect-square cursor-pointer hover:opacity-80 transition-opacity" src="https://cdn.pixabay.com/photo/2022/11/15/04/54/automotive-7593064_1280.jpg"/>
+                                <img class="rounded-lg object-cover w-full h-full aspect-square cursor-pointer hover:opacity-80 transition-opacity" src="https://cdn.pixabay.com/photo/2023/07/04/19/43/man-8106958_1280.jpg"/>
+                                <img class="rounded-lg object-cover w-full h-full aspect-square cursor-pointer hover:opacity-80 transition-opacity" src="https://cdn.pixabay.com/photo/2023/04/06/15/50/woman-7904371_1280.jpg"/>
+                                <img class="rounded-lg object-cover w-full h-full aspect-square cursor-pointer hover:opacity-80 transition-opacity" src="https://cdn.pixabay.com/photo/2023/01/21/15/10/ai-generated-7734267_1280.jpg"/>
+                                <img class="rounded-lg object-cover w-full h-full aspect-square cursor-pointer hover:opacity-80 transition-opacity" src="https://cdn.pixabay.com/photo/2022/05/30/08/57/flowers-7230812_1280.jpg"/>
+                                <img class="rounded-lg object-cover w-full h-full aspect-square cursor-pointer hover:opacity-80 transition-opacity" src="https://cdn.pixabay.com/photo/2023/03/13/05/35/ai-generated-7848583_1280.jpg"/>
+                                <img class="rounded-lg object-cover w-full h-full aspect-square cursor-pointer hover:opacity-80 transition-opacity" src="https://cdn.pixabay.com/photo/2022/02/15/14/35/beautiful-7014726_1280.png"/>
+                            </div>
+                        </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 px-4 bg-white">
-        <div class="container mx-auto max-w-6xl">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
-                利用者の声
-            </h2>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg border-2 border-gray-100">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
-                            <span class="material-symbols-outlined text-white">person</span>
+                        <!-- Register Section -->
+                        <section class="mb-12 sm:mb-16 scroll-mt-20 sm:scroll-mt-24" id="register">
+                            <div class="bg-primary/10 dark:bg-primary/20 p-6 sm:p-8 md:p-12 rounded-xl text-center">
+                                <h2 class="text-text-light dark:text-text-dark text-2xl sm:text-3xl md:text-[32px] font-bold leading-tight tracking-[-0.015em] mb-3 sm:mb-4">今すぐLUMINOSに参加しよう</h2>
+                                <p class="text-muted-light dark:text-muted-dark text-sm sm:text-base max-w-2xl mx-auto mb-6 sm:mb-8">あなたのクリエイティブな旅を、ここから始めませんか？まずは公式LINEでお気軽にご相談ください。</p>
+                                <a href="https://lin.ee/2Z2p07i" target="_blank" class="inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 sm:h-14 px-6 sm:px-8 bg-primary text-white text-base sm:text-lg font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                                    <span class="truncate">公式LINEで相談する</span>
+                                </a>
+                            </div>
+                        </section>
+                    </main>
+
+                    <!-- Footer -->
+                    <footer class="border-t border-solid border-border-light dark:border-border-dark mt-8 sm:mt-10 py-6 sm:py-8 md:py-10">
+                        <div class="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
+                            <div class="flex items-center gap-3">
+                                <div class="size-5 sm:size-6 text-primary">
+                                    <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+                                    </svg>
+                                </div>
+                                <h2 class="text-text-light dark:text-text-dark text-lg sm:text-xl font-bold">LUMINOS</h2>
+                            </div>
+                            <div class="flex items-center gap-4 sm:gap-6">
+                                <a class="text-muted-light dark:text-muted-dark hover:text-primary dark:hover:text-primary transition-colors text-xs sm:text-sm" href="privacy.html">プライバシーポリシー</a>
+                            </div>
+                            <div class="flex items-center gap-3 sm:gap-4">
+                                <a class="text-muted-light dark:text-muted-dark hover:text-primary dark:hover:text-primary transition-colors" href="#">
+                                    <svg aria-hidden="true" class="h-5 w-5 sm:h-6 sm:w-6" fill="currentColor" viewbox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+                                </a>
+                                <a class="text-muted-light dark:text-muted-dark hover:text-primary dark:hover:text-primary transition-colors" href="#">
+                                    <svg aria-hidden="true" class="h-5 w-5 sm:h-6 sm:w-6" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.285 2.51 7.92 6 9.444v-6.9H6v-2.544h2V9.66c0-2.023 1.19-3.15 3.022-3.15.876 0 1.791.157 1.791.157v2.17h-1.127c-.982 0-1.28.618-1.28 1.23v1.49h2.393l-.385 2.544H11.4v6.9c3.49-1.523 6-5.16 6-9.444C18 6.477 13.523 2 12 2z" fill-rule="evenodd"></path></svg>
+                                </a>
+                                <a class="text-muted-light dark:text-muted-dark hover:text-primary dark:hover:text-primary transition-colors" href="#">
+                                    <svg aria-hidden="true" class="h-5 w-5 sm:h-6 sm:w-6" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"></path></svg>
+                                </a>
+                            </div>
                         </div>
-                        <div>
-                            <p class="font-bold text-gray-900">Y.Kさん（30代・会社員）</p>
-                            <div class="flex text-yellow-400">★★★★★</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 leading-relaxed italic">
-                        「伴奏の基礎から実践まで、とても丁寧に教えていただきました。nagi先生のレッスンを受けてから、音楽の聴き方が変わり、伴奏することが楽しくなりました！」
-                    </p>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg border-2 border-gray-100">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
-                            <span class="material-symbols-outlined text-white">person</span>
-                        </div>
-                        <div>
-                            <p class="font-bold text-gray-900">M.Tさん（20代・音大生）</p>
-                            <div class="flex text-yellow-400">★★★★★</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 leading-relaxed italic">
-                        「プロの視点からのアドバイスがとても勉強になります。オンラインなので、地方に住んでいる私でも受講できて本当に助かっています！」
-                    </p>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg border-2 border-gray-100">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
-                            <span class="material-symbols-outlined text-white">person</span>
-                        </div>
-                        <div>
-                            <p class="font-bold text-gray-900">S.Hさん（40代・ピアノ講師）</p>
-                            <div class="flex text-yellow-400">★★★★★</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 leading-relaxed italic">
-                        「生徒の伴奏をする機会が増え、自信を持って弾けるようになりました。nagi先生の指導は具体的でわかりやすく、すぐに実践できます。」
-                    </p>
-                </div>
-                
-                <!-- Testimonial 4 -->
-                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg border-2 border-gray-100">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
-                            <span class="material-symbols-outlined text-white">person</span>
-                        </div>
-                        <div>
-                            <p class="font-bold text-gray-900">A.Nさん（50代・主婦）</p>
-                            <div class="flex text-yellow-400">★★★★★</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 leading-relaxed italic">
-                        「久しぶりにピアノを再開し、伴奏の世界に魅了されました。nagi先生の優しく丁寧な指導のおかげで、楽しく続けられています。」
-                    </p>
+                        <p class="text-center text-xs sm:text-sm text-muted-light dark:text-muted-dark mt-6 sm:mt-8">© 2024 LUMINOS. All rights reserved.</p>
+                    </footer>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-20 px-4 bg-gray-50">
-        <div class="container mx-auto max-w-6xl">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
-                成果物ギャラリー
-            </h2>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <!-- Gallery Item 1 -->
-                <div class="aspect-square bg-gradient-to-br from-primary/20 to-primary/40 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group">
-                    <div class="w-full h-full flex items-center justify-center">
-                        <span class="material-symbols-outlined text-white text-6xl group-hover:scale-110 transition">music_note</span>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 2 -->
-                <div class="aspect-square bg-gradient-to-br from-primary/30 to-primary/50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group">
-                    <div class="w-full h-full flex items-center justify-center">
-                        <span class="material-symbols-outlined text-white text-6xl group-hover:scale-110 transition">piano</span>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 3 -->
-                <div class="aspect-square bg-gradient-to-br from-primary/40 to-primary/60 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group">
-                    <div class="w-full h-full flex items-center justify-center">
-                        <span class="material-symbols-outlined text-white text-6xl group-hover:scale-110 transition">mic</span>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 4 -->
-                <div class="aspect-square bg-gradient-to-br from-primary/50 to-primary/70 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group">
-                    <div class="w-full h-full flex items-center justify-center">
-                        <span class="material-symbols-outlined text-white text-6xl group-hover:scale-110 transition">library_music</span>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 5 -->
-                <div class="aspect-square bg-gradient-to-br from-primary/60 to-primary/80 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group">
-                    <div class="w-full h-full flex items-center justify-center">
-                        <span class="material-symbols-outlined text-white text-6xl group-hover:scale-110 transition">headphones</span>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 6 -->
-                <div class="aspect-square bg-gradient-to-br from-primary/70 to-primary rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group">
-                    <div class="w-full h-full flex items-center justify-center">
-                        <span class="material-symbols-outlined text-white text-6xl group-hover:scale-110 transition">queue_music</span>
-                    </div>
-                </div>
-            </div>
-            
-            <p class="text-center text-gray-500 mt-8 text-sm">
-                ※ 実際のレッスン風景や演奏動画は公式LINEでご紹介しています
-            </p>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 px-4 bg-gradient-to-br from-primary to-primary-light text-white">
-        <div class="container mx-auto text-center max-w-4xl">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                あなたの音楽人生を<br class="md:hidden">輝かせませんか？
-            </h2>
-            <p class="text-xl mb-10 opacity-95">
-                まずは無料相談から。<br>
-                公式LINEで、あなたの目標や悩みをお聞かせください。
-            </p>
-            <a href="https://lin.ee/2Z2p07i" target="_blank" class="inline-block bg-white text-primary px-10 py-5 rounded-full text-xl font-bold hover:bg-gray-100 transition transform hover:scale-105 shadow-2xl">
-                <span class="flex items-center gap-2">
-                    <span class="material-symbols-outlined">chat</span>
-                    公式LINEで無料相談
-                </span>
-            </a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 px-4">
-        <div class="container mx-auto max-w-6xl">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <span class="material-symbols-outlined text-primary text-3xl">piano</span>
-                        <span class="text-2xl font-bold">LUMINOS</span>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        プロの伴奏者nagi先生による<br>
-                        オンライン伴奏レッスン
-                    </p>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">クイックリンク</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#concept" class="hover:text-primary transition">コンセプト</a></li>
-                        <li><a href="#instructor" class="hover:text-primary transition">講師紹介</a></li>
-                        <li><a href="#qa" class="hover:text-primary transition">Q&A</a></li>
-                        <li><a href="#testimonials" class="hover:text-primary transition">利用者の声</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">お問い合わせ</h4>
-                    <a href="https://lin.ee/2Z2p07i" target="_blank" class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark transition px-4 py-2 rounded-full text-sm font-semibold">
-                        <span class="material-symbols-outlined">chat</span>
-                        公式LINE
-                    </a>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
-                <p class="mb-2">
-                    <a href="privacy.html" class="hover:text-primary transition">プライバシーポリシー</a>
-                </p>
-                <p>&copy; 2024 LUMINOS. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript for Accordion -->
-    <script>
-        function toggleAccordion(button) {
-            const content = button.nextElementSibling;
-            const icon = button.querySelector('.material-symbols-outlined');
-            
-            // Close all other accordions
-            document.querySelectorAll('.accordion-content').forEach(item => {
-                if (item !== content) {
-                    item.classList.remove('active');
-                    item.previousElementSibling.querySelector('.material-symbols-outlined').style.transform = 'rotate(0deg)';
-                }
-            });
-            
-            // Toggle current accordion
-            content.classList.toggle('active');
-            
-            if (content.classList.contains('active')) {
-                icon.style.transform = 'rotate(180deg)';
-            } else {
-                icon.style.transform = 'rotate(0deg)';
-            }
-        }
-    </script>
-
+    </div>
 </body>
 </html>

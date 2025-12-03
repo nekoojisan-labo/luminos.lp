@@ -17,9 +17,9 @@ export default function Columns() {
     {
       id: 2,
       category: "Writing",
-      date: "2024.11.28",
-      title: "読まれる文章の書き方・基礎編",
-      desc: "プロの編集者が教える、読者を引き込む文章テクニック。文章構成の基本から実践的なコツまで。",
+      date: "2025.10.10",
+      title: "【悪用厳禁？】あなたのnoteが驚くほど読まれる！今日からできる「魔法の誘導投稿」5つのコツ",
+      desc: "「渾身のnote記事を書いたのに、全然読まれない…」そんな悩みを解決する、SNSからの誘導投稿テクニックを5つ紹介します。",
       image: "/images/writing-category.jpg"
     },
     {
@@ -96,7 +96,7 @@ export default function Columns() {
       <section className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredArticles.map((article, index) => (
-            <Link key={article.id} href={article.id === 1 ? "/columns/ai-basics" : "/columns"}>
+            <Link key={article.id} href={article.id === 1 ? "/columns/ai-basics" : article.id === 2 ? "/columns/2" : "/columns"}>
               <div 
                 className="group flex flex-col h-full bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-prism-cyan/50 hover:shadow-[0_0_30px_rgba(0,229,255,0.1)] transition-all duration-500 animate-in fade-in slide-in-from-bottom-8 cursor-pointer"
                 style={{ animationDelay: `${index * 100}ms` }}

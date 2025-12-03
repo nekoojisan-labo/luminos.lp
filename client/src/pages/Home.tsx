@@ -72,6 +72,7 @@ export default function Home() {
               <img 
                 src="/images/mind-category.jpg" 
                 alt="Concept Art" 
+                loading="lazy"
                 className="relative rounded-2xl border border-white/10 shadow-2xl aspect-[4/3] object-cover w-full"
               />
               
@@ -195,6 +196,7 @@ export default function Home() {
                     <img 
                       src={post.image} 
                       alt={post.title} 
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>

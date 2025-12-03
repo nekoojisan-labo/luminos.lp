@@ -105,6 +105,7 @@ export default function Columns() {
                   <img 
                     src={article.image} 
                     alt={article.title} 
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute top-4 left-4 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full text-xs font-bold border border-white/10">

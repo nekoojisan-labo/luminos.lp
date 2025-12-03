@@ -40,26 +40,35 @@ export default function VisualEffects() {
 
       {/* Custom Cursor */}
       <div 
-        className="fixed pointer-events-none z-[9999] hidden md:block mix-blend-difference transition-transform duration-150 ease-out"
+        className="fixed pointer-events-none z-[9999] hidden md:block transition-transform duration-150 ease-out"
         style={{
           left: position.x,
           top: position.y,
           transform: `translate(-50%, -50%) scale(${isHovering ? 2.5 : 1})`
         }}
       >
-        <div className={`w-8 h-8 border border-white rounded-full transition-all duration-300 ${isHovering ? 'bg-white' : 'bg-transparent'}`} />
+        <div 
+          className={`w-8 h-8 border border-[#FFFFE0] rounded-full transition-all duration-300 ${isHovering ? 'bg-[#FFFFE0]/10' : 'bg-transparent'}`}
+          style={{ 
+            boxShadow: '0 0 15px rgba(255, 255, 224, 0.5), 0 0 5px rgba(255, 255, 0, 0.3)',
+            borderColor: '#FFFFE0'
+          }}
+        />
       </div>
       
       {/* Cursor Dot */}
       <div 
-        className="fixed pointer-events-none z-[9999] hidden md:block mix-blend-difference"
+        className="fixed pointer-events-none z-[9999] hidden md:block"
         style={{
           left: position.x,
           top: position.y,
           transform: 'translate(-50%, -50%)'
         }}
       >
-        <div className="w-1 h-1 bg-white rounded-full" />
+        <div 
+          className="w-1.5 h-1.5 bg-[#FFFFE0] rounded-full" 
+          style={{ boxShadow: '0 0 10px 2px rgba(255, 255, 0, 0.8)' }}
+        />
       </div>
     </>
   );

@@ -66,19 +66,19 @@ export default function Home() {
       {/* Concept Section */}
       <section className="py-32 relative overflow-hidden">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="relative order-2 lg:order-1">
               <div className="absolute -inset-4 bg-gradient-to-r from-prism-blue to-prism-magenta opacity-20 blur-3xl rounded-full"></div>
               <img 
                 src="/images/mind-category.jpg" 
                 alt="Concept Art" 
-                className="relative rounded-2xl border border-white/10 shadow-2xl aspect-[4/3] object-cover"
+                className="relative rounded-2xl border border-white/10 shadow-2xl aspect-[4/3] object-cover w-full"
               />
               
-              {/* Floating Cards */}
-              <div className="absolute -bottom-8 -right-8 bg-black/80 backdrop-blur-xl border border-white/10 p-6 rounded-xl shadow-2xl max-w-xs hidden md:block">
+              {/* Floating Cards - Adjusted position to avoid overlap */}
+              <div className="absolute -bottom-6 -right-4 lg:-bottom-8 lg:-right-8 bg-black/90 backdrop-blur-xl border border-white/10 p-6 rounded-xl shadow-2xl max-w-[280px] hidden sm:block z-20">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-full bg-prism-cyan/20 flex items-center justify-center text-prism-cyan">
+                  <div className="w-10 h-10 rounded-full bg-prism-cyan/20 flex items-center justify-center text-prism-cyan shrink-0">
                     <Brain className="w-5 h-5" />
                   </div>
                   <div>
@@ -92,7 +92,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div>
+            <div className="order-1 lg:order-2">
               <span className="text-prism-cyan font-bold tracking-wider uppercase text-sm mb-4 block">Concept</span>
               <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight text-balance">
                 「個」の時代を生き抜く

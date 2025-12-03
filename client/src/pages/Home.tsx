@@ -204,7 +204,7 @@ export default function Home() {
               }
             ].map((post, i) => (
               <Link key={i} href="/columns">
-                <a className="group block">
+                <div className="group block cursor-pointer">
                   <div className="relative aspect-video rounded-xl overflow-hidden mb-6 border border-white/10">
                     <img 
                       src={post.image} 
@@ -222,7 +222,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold leading-snug group-hover:text-prism-cyan transition-colors">
                     {post.title}
                   </h3>
-                </a>
+                </div>
               </Link>
             ))}
           </div>

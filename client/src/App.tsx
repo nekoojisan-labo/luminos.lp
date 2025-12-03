@@ -23,8 +23,10 @@ function Router() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/courses" component={Courses} />
-        <Route path="/gallery" component={Gallery} />      <Route path="/columns/1" component={ColumnDetail} />
-      <Route path="/columns/2" component={ColumnDetail2} />     <Route path="/columns/ai-basics" component={ColumnDetail} />
+        <Route path="/gallery" component={Gallery} />
+        <Route path="/columns" component={Columns} />
+        <Route path="/columns/ai-basics" component={ColumnDetail} />
+        <Route path="/columns/2" component={ColumnDetail2} />
         <Route path="/contact" component={Contact} />
         <Route path="/line" component={Line} />
         <Route component={NotFound} />

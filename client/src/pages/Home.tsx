@@ -27,17 +27,15 @@ export default function Home() {
             <span className="text-xs font-medium tracking-wider uppercase text-white/80">New Generation Community</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl lg:text-9xl font-black tracking-tighter mb-8 leading-[1.1] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-100">
+          <h1 className="text-5xl md:text-7xl lg:text-9xl font-black tracking-tighter mb-8 leading-[1.1] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-100 text-balance">
             <span className="block text-white drop-shadow-lg">秘めたる想いを、</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-prism-cyan via-prism-blue to-prism-magenta drop-shadow-[0_0_30px_rgba(0,229,255,0.5)]">
               輝きに。
             </span>
           </h1>
           
-          <p className="text-lg md:text-2xl text-white/90 max-w-2xl mb-12 leading-relaxed font-medium drop-shadow-md animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
-            メンタル・ライティング・AI。<br className="md:hidden" />
-            3つの要素を掛け合わせ、<br className="md:hidden" />あなたの内なる価値を<br className="hidden md:block" />
-            世界へ届けるための<br className="md:hidden" />クリエイティブコミュニティ。
+          <p className="text-lg md:text-2xl text-white/90 max-w-2xl mb-12 leading-relaxed font-medium drop-shadow-md animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 text-pretty">
+            メンタル・ライティング・AI。3つの要素を掛け合わせ、あなたの内なる価値を世界へ届けるためのクリエイティブコミュニティ。
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
@@ -92,13 +90,12 @@ export default function Home() {
             
             <div>
               <span className="text-prism-cyan font-bold tracking-wider uppercase text-sm mb-4 block">Concept</span>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
-                「個」の時代を生き抜く<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60">3つの武器</span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight text-balance">
+                「個」の時代を生き抜く
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60 block mt-2">3つの武器</span>
               </h2>
-              <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                LUMINOUSでは、現代のクリエイターに必要な3つのスキルを統合的に学びます。
-                単なるノウハウではなく、あなたの「在り方」から変革を起こします。
+              <p className="text-muted-foreground text-lg mb-8 leading-relaxed text-pretty">
+                LUMINOUSでは、現代のクリエイターに必要な3つのスキルを統合的に学びます。単なるノウハウではなく、あなたの「在り方」から変革を起こします。
               </p>
               
               <div className="space-y-6">
@@ -130,10 +127,9 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <span className="text-prism-magenta font-bold tracking-wider uppercase text-sm mb-4 block">Features</span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">LUMINOUSで得られるもの</h2>
-            <p className="text-muted-foreground text-lg">
-              オンライン学習とコミュニティの力を掛け合わせ、<br className="hidden md:block" />
-              あなたの成長を加速させる環境を用意しています。
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">LUMINOUSで得られるもの</h2>
+            <p className="text-muted-foreground text-lg text-pretty max-w-2xl mx-auto">
+              オンライン学習とコミュニティの力を掛け合わせ、あなたの成長を加速させる環境を用意しています。
             </p>
           </div>
 
@@ -240,12 +236,11 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-prism-blue/20 via-prism-magenta/20 to-prism-cyan/20 blur-3xl opacity-30"></div>
         
         <div className="container relative z-10 text-center max-w-4xl mx-auto">
-          <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter">
+          <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter text-balance">
             Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-prism-cyan to-white">Shine?</span>
           </h2>
-          <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-            まずはLINE公式アカウントに登録して、<br />
-            限定コンテンツと最新情報を受け取りましょう。
+          <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto text-pretty">
+            まずはLINE公式アカウントに登録して、限定コンテンツと最新情報を受け取りましょう。
           </p>
           <Link href="/line">
             <Button size="lg" className="h-16 px-12 rounded-full bg-white text-black hover:bg-white/90 font-bold text-lg shadow-[0_0_50px_rgba(255,255,255,0.3)] hover:shadow-[0_0_80px_rgba(255,255,255,0.5)] transition-all duration-500">

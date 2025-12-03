@@ -12,9 +12,8 @@ export default function Contact() {
         <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
           Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-prism-blue to-prism-cyan">Us</span>
         </h1>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
-          LUMINOUSに関するご質問やご相談は、こちらのフォームからお送りください。<br />
-          通常3営業日以内に返信いたします。
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 text-pretty">
+          LUMINOUSに関するご質問やご相談は、こちらのフォームからお送りください。通常3営業日以内に返信いたします。
         </p>
       </section>
 

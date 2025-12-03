@@ -9,9 +9,8 @@ export default function Line() {
         <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
           Join <span className="text-transparent bg-clip-text bg-gradient-to-r from-prism-green to-prism-cyan">LUMINOUS</span>
         </h1>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
-          LUMINOUSへの参加は、LINE公式アカウントから。<br />
-          登録後すぐに、限定コンテンツと特典を受け取ることができます。
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 text-pretty">
+          LUMINOUSへの参加は、LINE公式アカウントから。登録後すぐに、限定コンテンツと特典を受け取ることができます。
         </p>
       </section>
 

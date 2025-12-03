@@ -12,9 +12,8 @@ export default function Courses() {
           <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
             Learning <span className="text-transparent bg-clip-text bg-gradient-to-r from-prism-blue to-prism-magenta">Path</span>
           </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
-            3名の専門講師による、メンタル・ライティング・AI活用の総合的な学習プログラム。
-            基礎から応用まで、体系的に学べるカリキュラムを用意しています。
+          <p className="text-xl text-muted-foreground leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 text-pretty">
+            3名の専門講師による、メンタル・ライティング・AI活用の総合的な学習プログラム。基礎から応用まで、体系的に学べるカリキュラムを用意しています。
           </p>
         </div>
       </section>
@@ -36,10 +35,8 @@ export default function Courses() {
               Foundation
             </div>
             <h2 className="text-4xl font-bold mb-6">Mindset Master Class</h2>
-            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              副業や創作活動を継続するための土台となるマインドセットを構築します。
-              自己理解を深め、目標設定から日々の習慣化までをサポート。
-              「なぜやるのか」を明確にし、迷いのない行動力を手に入れます。
+            <p className="text-muted-foreground text-lg mb-8 leading-relaxed text-pretty">
+              副業や創作活動を継続するための土台となるマインドセットを構築します。自己理解を深め、目標設定から日々の習慣化までをサポート。「なぜやるのか」を明確にし、迷いのない行動力を手に入れます。
             </p>
             
             <div className="space-y-4 mb-10">
@@ -78,10 +75,8 @@ export default function Courses() {
               Skill
             </div>
             <h2 className="text-4xl font-bold mb-6">Writing & Expression</h2>
-            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              あなたの想いや知識を、読者に届く言葉に変換する技術を学びます。
-              基礎的な文章構成から、セールスライティング、ストーリーテリングまで。
-              「書くこと」を通じて、ファンを作り、信頼を築く力を養います。
+            <p className="text-muted-foreground text-lg mb-8 leading-relaxed text-pretty">
+              あなたの想いや知識を、読者に届く言葉に変換する技術を学びます。基礎的な文章構成から、セールスライティング、ストーリーテリングまで。「書くこと」を通じて、ファンを作り、信頼を築く力を養います。
             </p>
             
             <div className="space-y-4 mb-10">
@@ -136,10 +131,8 @@ export default function Courses() {
               Technology
             </div>
             <h2 className="text-4xl font-bold mb-6">AI Creative Lab</h2>
-            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              ChatGPTやMidjourneyなどの生成AIツールを使いこなし、
-              制作効率とクオリティを飛躍的に向上させる方法を学びます。
-              プロンプトエンジニアリングの基礎から、実践的な活用事例まで。
+            <p className="text-muted-foreground text-lg mb-8 leading-relaxed text-pretty">
+              ChatGPTやMidjourneyなどの生成AIツールを使いこなし、制作効率とクオリティを飛躍的に向上させる方法を学びます。プロンプトエンジニアリングの基礎から、実践的な活用事例まで。
             </p>
             
             <div className="space-y-4 mb-10">
@@ -177,10 +170,9 @@ export default function Courses() {
         <div className="bg-gradient-to-r from-white/5 to-white/10 border border-white/10 rounded-3xl p-12 text-center relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-prism-red via-prism-green to-prism-blue"></div>
           
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">学びを始める準備はできましたか？</h2>
-          <p className="text-muted-foreground text-lg mb-10 max-w-2xl mx-auto">
-            LUMINOUSメンバーシップに参加して、全てのコースにアクセスしましょう。<br />
-            あなたのペースで、好きな場所から学びをスタートできます。
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">学びを始める準備はできましたか？</h2>
+          <p className="text-muted-foreground text-lg mb-10 max-w-2xl mx-auto text-pretty">
+            LUMINOUSメンバーシップに参加して、全てのコースにアクセスしましょう。あなたのペースで、好きな場所から学びをスタートできます。
           </p>
           <Link href="/line">
             <Button size="lg" className="h-14 px-10 rounded-full bg-white text-black hover:bg-white/90 font-bold">

@@ -128,9 +128,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-1">
             <div className="text-2xl font-bold mb-4">LUMINOUS</div>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              秘めたる想いを、輝きに。<br />
-              メンタル・ライティング・AIを総合的に学べるコミュニティ。
+            <p className="text-muted-foreground text-sm leading-relaxed text-pretty">
+              秘めたる想いを、輝きに。メンタル・ライティング・AIを総合的に学べるコミュニティ。
             </p>
           </div>
 

@@ -12,9 +12,8 @@ export default function NotFound() {
         404
       </h1>
       <h2 className="text-2xl font-bold mb-6">Page Not Found</h2>
-      <p className="text-muted-foreground max-w-md mb-10">
-        お探しのページは見つかりませんでした。<br />
-        URLが間違っているか、ページが移動・削除された可能性があります。
+      <p className="text-muted-foreground max-w-md mb-10 text-pretty">
+        お探しのページは見つかりませんでした。URLが間違っているか、ページが移動・削除された可能性があります。
       </p>
       <Link href="/">
         <Button size="lg" className="rounded-full px-8">

@@ -24,9 +24,8 @@ export default function Gallery() {
         <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
           Member's <span className="text-transparent bg-clip-text bg-gradient-to-r from-prism-magenta to-prism-cyan">Gallery</span>
         </h1>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
-          LUMINOUSメンバーが制作した作品の数々。<br />
-          AIアート、グラフィックデザイン、写真など、多様な表現が集まる場所。
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 text-pretty">
+          LUMINOUSメンバーが制作した作品の数々。AIアート、グラフィックデザイン、写真など、多様な表現が集まる場所。
         </p>
       </section>
 

@@ -75,21 +75,7 @@ export default function Home() {
                 className="relative rounded-2xl border border-white/10 shadow-2xl aspect-[4/3] object-cover w-full"
               />
               
-              {/* Floating Cards - Adjusted position to avoid overlap */}
-              <div className="absolute -bottom-6 -right-4 lg:-bottom-8 lg:-right-8 bg-black/90 backdrop-blur-xl border border-white/10 p-6 rounded-xl shadow-2xl max-w-[280px] hidden sm:block z-20">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-full bg-prism-cyan/20 flex items-center justify-center text-prism-cyan shrink-0">
-                    <Brain className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold">Mindset</div>
-                    <div className="text-xs text-muted-foreground">全ての土台となる思考</div>
-                  </div>
-                </div>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  継続するためのマインドセットと、自己肯定感を高めるワーク。
-                </p>
-              </div>
+              {/* Floating Cards removed as requested */}
             </div>
             
             <div className="order-1 lg:order-2">

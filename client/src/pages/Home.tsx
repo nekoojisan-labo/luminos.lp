@@ -16,42 +16,46 @@ export default function Home() {
             className="w-full h-full object-cover object-top opacity-90 md:object-[center_20%]"
           />
           {/* Gradient Overlays for Text Readability and Theme Integration */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent z-10"></div>
+          {/* 顔周りを避けるようにグラデーションを調整 */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/40 to-transparent md:via-black/20 z-10"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/40 z-10"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,0,85,0.15),transparent_50%)] z-10 mix-blend-screen"></div>
         </div>
 
         <div className="container relative z-20 flex flex-col items-start text-left max-w-6xl mx-auto px-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-            <span className="w-2 h-2 rounded-full bg-prism-cyan animate-pulse"></span>
-            <span className="text-xs font-medium tracking-wider uppercase text-white/80">New Generation Community</span>
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl lg:text-9xl font-black tracking-tighter mb-8 leading-[1.1] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-100 text-balance">
-            <span className="block text-white drop-shadow-lg">秘めたる想いを、</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-prism-cyan via-prism-blue to-prism-magenta drop-shadow-[0_0_30px_rgba(0,229,255,0.5)]">
-              輝きに。
-            </span>
-          </h1>
-          
-          <p className="text-lg md:text-2xl text-white/90 max-w-2xl mb-12 leading-relaxed font-medium drop-shadow-md animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 text-pretty">
-            メンタル・ライティング・AI。3つの要素を掛け合わせ、あなたの内なる価値を世界へ届けるためのクリエイティブコミュニティ。
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
-            <Link href="/line">
-              <Button size="lg" className="h-14 px-8 rounded-full bg-white text-black hover:bg-white/90 font-bold text-base w-full sm:w-auto">
-                無料で参加する <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </Link>
-            <Link href="/courses">
-              <Button size="lg" variant="outline" className="h-14 px-8 rounded-full border-white/20 bg-white/5 hover:bg-white/10 text-white font-medium text-base backdrop-blur-sm w-full sm:w-auto">
-                コースを見る
-              </Button>
-            </Link>
+          {/* テキストコンテナの幅を制限して左側に寄せる */}
+          <div className="max-w-2xl md:max-w-xl lg:max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+              <span className="w-2 h-2 rounded-full bg-prism-cyan animate-pulse"></span>
+              <span className="text-xs font-medium tracking-wider uppercase text-white/80">New Generation Community</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-8 leading-[1.1] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-100 text-balance">
+              <span className="block text-white drop-shadow-lg">秘めたる想いを、</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-prism-cyan via-prism-blue to-prism-magenta drop-shadow-[0_0_30px_rgba(0,229,255,0.5)]">
+                輝きに。
+              </span>
+            </h1>
+            
+            <p className="text-lg md:text-2xl text-white/90 mb-12 leading-relaxed font-medium drop-shadow-md animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 text-pretty">
+              メンタル・ライティング・AI。3つの要素を掛け合わせ、あなたの内なる価値を世界へ届けるためのクリエイティブコミュニティ。
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
+              <Link href="/line">
+                <Button size="lg" className="h-14 px-8 rounded-full bg-white text-black hover:bg-white/90 font-bold text-base w-full sm:w-auto shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                  無料で参加する <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
+              <Link href="/courses">
+                <Button size="lg" variant="outline" className="h-14 px-8 rounded-full border-white/20 bg-black/40 hover:bg-white/10 text-white font-medium text-base backdrop-blur-md w-full sm:w-auto">
+                  コースを見る
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
-
+        
         {/* Scroll Indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce">
           <span className="text-[10px] uppercase tracking-widest">Scroll</span>

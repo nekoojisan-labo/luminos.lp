@@ -8,11 +8,11 @@ export default function Columns() {
   const articles = [
     {
       id: 1,
-      category: "Mind",
-      date: "2024.12.01",
-      title: "副業を続けるためのマインドセット",
-      desc: "夜の限られた時間で成果を出すために必要な心構えと考え方。モチベーションを維持する5つの方法を紹介します。",
-      image: "/images/mind-category.jpg"
+      category: "AI",
+      date: "2025.07.11",
+      title: "\"hello world\" AIとお話しと基本の「き」",
+      desc: "「ChatGPTを使ってみたけど、思ったような答えが返ってこない...」そんな経験ありませんか？プログラミング的思考でAIとの対話を劇的に改善する方法。",
+      image: "/images/ai-category.jpg"
     },
     {
       id: 2,
@@ -96,7 +96,7 @@ export default function Columns() {
       <section className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredArticles.map((article, index) => (
-            <Link key={article.id} href="/columns">
+            <Link key={article.id} href={article.id === 1 ? "/columns/ai-basics" : "/columns"}>
               <a 
                 className="group flex flex-col h-full bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-prism-cyan/50 hover:shadow-[0_0_30px_rgba(0,229,255,0.1)] transition-all duration-500 animate-in fade-in slide-in-from-bottom-8"
                 style={{ animationDelay: `${index * 100}ms` }}

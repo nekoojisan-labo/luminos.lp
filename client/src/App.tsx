@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import Courses from "./pages/Courses";
 import Gallery from "./pages/Gallery";
 import Columns from "./pages/Columns";
+import ColumnDetail from "./pages/ColumnDetail";
 import Contact from "./pages/Contact";
 import Line from "./pages/Line";
 import NotFound from "./pages/NotFound";
@@ -21,8 +22,9 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/courses" component={Courses} />
         <Route path="/gallery" component={Gallery} />
-        <Route path="/columns" component={Columns} />
-        <Route path="/contact" component={Contact} />
+      <Route path="/columns" component={Columns} />
+      <Route path="/columns/ai-basics" component={ColumnDetail} />
+      <Route path="/contact" component={Contact} />
         <Route path="/line" component={Line} />
         <Route component={NotFound} />
       </Switch>

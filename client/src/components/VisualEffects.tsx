@@ -31,6 +31,14 @@ export default function VisualEffects() {
 
   return (
     <>
+      {/* Interactive Background Spotlight */}
+      <div 
+        className="fixed inset-0 w-full h-full pointer-events-none z-0 transition-opacity duration-500"
+        style={{
+          background: `radial-gradient(600px at ${position.x}px ${position.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`
+        }}
+      />
+
       {/* Noise Overlay */}
       <div className="fixed inset-0 w-full h-full pointer-events-none z-50 opacity-[0.03] mix-blend-overlay"
            style={{

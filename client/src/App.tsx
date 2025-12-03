@@ -1,5 +1,6 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import VisualEffects from "@/components/VisualEffects";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -22,9 +23,9 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/courses" component={Courses} />
         <Route path="/gallery" component={Gallery} />
-      <Route path="/columns" component={Columns} />
-      <Route path="/columns/ai-basics" component={ColumnDetail} />
-      <Route path="/contact" component={Contact} />
+        <Route path="/columns" component={Columns} />
+        <Route path="/columns/ai-basics" component={ColumnDetail} />
+        <Route path="/contact" component={Contact} />
         <Route path="/line" component={Line} />
         <Route component={NotFound} />
       </Switch>
@@ -35,8 +36,12 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="dark">
+      <ThemeProvider
+        defaultTheme="dark"
+        // switchable
+      >
         <TooltipProvider>
+          <VisualEffects />
           <Toaster />
           <Router />
         </TooltipProvider>

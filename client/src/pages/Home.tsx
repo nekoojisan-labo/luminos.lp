@@ -177,18 +177,18 @@ export default function Home() {
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-prism-green font-bold tracking-wider uppercase text-sm mb-4 block">Community</span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">コミュニティの雰囲気</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">はじめての方も安心</h2>
             <p className="text-muted-foreground text-lg text-pretty max-w-2xl mx-auto">
-              Discordでの交流、ライブ配信、AI活用の実践など、LUMINOUSでの日常をご紹介します。
+              「AIって難しそう…」「noteの書き方がわからない…」そんな初心者の方も大歓迎。マインドセットやお金の知識まで、ゼロから一緒に学べる環境があります。
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { image: "/images/community-1.jpg", title: "Discordラウンジ" },
-              { image: "/images/community-2.jpg", title: "動画講座" },
-              { image: "/images/community-3.jpg", title: "AIクリエイティブ実践" },
-              { image: "/images/community-4.jpg", title: "プロンプト研究" },
+              { image: "/images/community-1.jpg", title: "気軽に話せるDiscord交流" },
+              { image: "/images/community-2.jpg", title: "初心者向け動画講座" },
+              { image: "/images/community-3.jpg", title: "AIで遊びながら学ぶ" },
+              { image: "/images/community-4.jpg", title: "わからないことは何でも相談" },
             ].map((item, i) => (
               <div key={i} className="group relative aspect-video rounded-2xl overflow-hidden border border-white/10">
                 <img

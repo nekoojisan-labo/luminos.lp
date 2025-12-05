@@ -63,6 +63,24 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Video Section */}
+      <section className="py-20 relative overflow-hidden bg-black">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-prism-magenta/10">
+              <iframe
+                src="https://player.vimeo.com/video/1143721649?autoplay=0&loop=1&title=0&byline=0&portrait=0"
+                className="w-full h-full"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                title="LUMINOS Showcase"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Concept Section */}
       <section className="py-32 relative overflow-hidden">
         <div className="container">

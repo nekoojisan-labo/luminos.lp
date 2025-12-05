@@ -27,9 +27,12 @@ export default function ColumnDetail2() {
             <Badge className="mb-4 bg-prism-magenta/20 text-prism-magenta hover:bg-prism-magenta/30 border-prism-magenta/50 backdrop-blur-md">
               Writing
             </Badge>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-balance">
-              【悪用厳禁？】あなたのnoteが驚くほど読まれる！今日からできる「魔法の誘導投稿」5つのコツ
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 leading-tight">
+              【悪用厳禁？】<br className="sm:hidden" />あなたのnoteが<br className="hidden sm:inline md:hidden" />驚くほど読まれる！
             </h1>
+            <p className="text-xl md:text-2xl text-white/80 font-medium mb-6">
+              今日からできる「魔法の誘導投稿」5つのコツ
+            </p>
             <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-1.5">
                 <Clock className="w-4 h-4" />

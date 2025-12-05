@@ -35,8 +35,9 @@ export default function ColumnDetail() {
             </span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-balance">
-            "hello world" AIとお話しと基本の「き」
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3">
+            <span className="block">"hello world"</span>
+            <span className="block text-2xl md:text-3xl lg:text-4xl text-white/80 font-medium mt-2">AIとお話しと基本の「き」</span>
           </h1>
           
           <div className="flex items-center gap-3">

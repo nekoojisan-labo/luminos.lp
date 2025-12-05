@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, PenTool, Brain, ChevronRight } from "lucide-react";
+import { Sparkles, PenTool, Brain, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Home() {
@@ -172,91 +172,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Latest Columns */}
+      {/* Community Gallery Section */}
       <section className="py-32">
         <div className="container">
-          <div className="flex items-end justify-between mb-12">
-            <div>
-              <span className="text-prism-green font-bold tracking-wider uppercase text-sm mb-4 block">Columns</span>
-              <h2 className="text-4xl font-bold">Latest Articles</h2>
-            </div>
-            <Link href="/columns">
-              <Button variant="ghost" className="hidden md:flex gap-2 hover:bg-white/5">
-                View All <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-prism-green font-bold tracking-wider uppercase text-sm mb-4 block">Community</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">はじめての方も安心</h2>
+            <p className="text-muted-foreground text-lg text-pretty max-w-2xl mx-auto">
+              「AIって難しそう…」「noteの書き方がわからない…」そんな初心者の方も大歓迎。マインドセットやお金の知識まで、ゼロから一緒に学べる環境があります。
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              {
-                category: "Mind",
-                date: "2024.12.01",
-                title: "副業を続けるためのマインドセット",
-                image: "/images/mind-category.jpg"
-              },
-              {
-                category: "Writing",
-                date: "2024.11.28",
-                title: "読まれる文章の書き方・基礎編",
-                image: "/images/writing-category.jpg"
-              },
-              {
-                category: "AI",
-                date: "2024.11.25",
-                title: "ChatGPTを使った効率的なライティング",
-                image: "/images/ai-category.jpg"
-              }
-            ].map((post, i) => (
-              <Link key={i} href="/columns">
-                <div className="group block cursor-pointer">
-                  <div className="relative aspect-video rounded-xl overflow-hidden mb-6 border border-white/10">
-                    <img 
-                      src={post.image} 
-                      alt={post.title} 
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
-                    <div className="absolute top-4 left-4 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full text-xs font-bold border border-white/10">
-                      {post.category}
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
-                    <span>{post.date}</span>
-                  </div>
-                  <h3 className="text-xl font-bold leading-snug group-hover:text-prism-cyan transition-colors">
-                    {post.title}
-                  </h3>
+              { image: "/images/community-1.jpg", title: "気軽に話せるDiscord交流" },
+              { image: "/images/community-2.jpg", title: "初心者向け動画講座" },
+              { image: "/images/community-3.jpg", title: "AIで遊びながら学ぶ" },
+              { image: "/images/community-4.jpg", title: "わからないことは何でも相談" },
+            ].map((item, i) => (
+              <div key={i} className="group relative aspect-video rounded-2xl overflow-hidden border border-white/10">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div className="absolute bottom-4 left-4">
+                  <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-sm font-medium border border-white/10">
+                    {item.title}
+                  </span>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
-          
-          <div className="mt-12 text-center md:hidden">
-            <Link href="/columns">
-              <Button variant="outline" className="w-full">View All Articles</Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-prism-blue/20 via-prism-magenta/20 to-prism-cyan/20 blur-3xl opacity-30"></div>
-        
-        <div className="container relative z-10 text-center max-w-4xl mx-auto">
-          <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter text-balance">
-            Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-prism-cyan to-white">Shine?</span>
-          </h2>
-          <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto text-pretty">
-            まずはLINE公式アカウントに登録して、限定コンテンツと最新情報を受け取りましょう。
-          </p>
-          <Link href="/line">
-            <Button size="lg" className="h-16 px-12 rounded-full bg-white text-black hover:bg-white/90 font-bold text-lg shadow-[0_0_50px_rgba(255,255,255,0.3)] hover:shadow-[0_0_80px_rgba(255,255,255,0.5)] transition-all duration-500">
-              LINE登録はこちら
-            </Button>
-          </Link>
         </div>
       </section>
     </div>

@@ -14,6 +14,7 @@ export default function Gallery() {
     { id: 5, title: "Abstract Waves", category: "Graphic", image: "/images/columns-bg.jpg", author: "Member E", type: "image" },
     { id: 6, title: "Prism Light", category: "AI Art", image: "/images/hero-bg.jpg", author: "Member F", type: "image" },
     { id: 7, title: "Network Loop", category: "Motion", image: "/images/abstract-network.mp4", author: "Member G", type: "video" },
+    { id: 8, title: "LUMINOS Showcase", category: "Motion", image: "", author: "LUMINOS", type: "vimeo", vimeoId: "1143721649" },
   ];
 
   const filteredWorks = filter === "All" ? works : works.filter(work => work.category === filter);
@@ -60,9 +61,20 @@ export default function Gallery() {
                   className="group relative aspect-square rounded-xl overflow-hidden cursor-pointer border border-white/10 bg-white/5 animate-in fade-in zoom-in-95 duration-500"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  {work.type === "video" ? (
-                    <video 
-                      src={work.image} 
+                  {work.type === "vimeo" ? (
+                    <div className="w-full h-full bg-black flex items-center justify-center">
+                      <iframe
+                        src={`https://player.vimeo.com/video/${work.vimeoId}?background=1&autoplay=0&loop=1&muted=1`}
+                        className="w-full h-full object-cover pointer-events-none"
+                        frameBorder="0"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowFullScreen
+                        title={work.title}
+                      />
+                    </div>
+                  ) : work.type === "video" ? (
+                    <video
+                      src={work.image}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       muted
                       loop
@@ -71,9 +83,9 @@ export default function Gallery() {
                       onMouseOut={(e) => e.currentTarget.pause()}
                     />
                   ) : (
-                    <img 
-                      src={work.image} 
-                      alt={work.title} 
+                    <img
+                      src={work.image}
+                      alt={work.title}
                       loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
@@ -91,17 +103,26 @@ export default function Gallery() {
               </DialogTrigger>
               <DialogContent className="max-w-4xl bg-black/90 border-white/10 p-0 overflow-hidden">
                 <div className="relative aspect-video w-full bg-black flex items-center justify-center">
-                  {work.type === "video" ? (
-                    <video 
-                      src={work.image} 
+                  {work.type === "vimeo" ? (
+                    <iframe
+                      src={`https://player.vimeo.com/video/${work.vimeoId}?autoplay=1&loop=1`}
+                      className="w-full h-full"
+                      frameBorder="0"
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      allowFullScreen
+                      title={work.title}
+                    />
+                  ) : work.type === "video" ? (
+                    <video
+                      src={work.image}
                       className="w-full h-full object-contain"
                       controls
                       autoPlay
                     />
                   ) : (
-                    <img 
-                      src={work.image} 
-                      alt={work.title} 
+                    <img
+                      src={work.image}
+                      alt={work.title}
                       loading="lazy"
                       className="w-full h-full object-contain"
                     />

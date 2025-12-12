@@ -8,50 +8,26 @@ export default function Columns() {
   const articles = [
     {
       id: 1,
+      category: "Money",
+      date: "2025.12.12",
+      title: "マネーリテラシー：現役金融マン×ダイナミックマインドコーチが語る、本当の豊かさへの道",
+      desc: "お金の知識とマインドセットの両輪があってこそ実現する真の豊かさ。金融の現場で働くプロが、実践的な金融知識と心理学・認知科学を統合したアプローチを語ります。",
+      image: "/images/columns-bg.jpg"
+    },
+    {
+      id: 2,
       category: "AI",
       date: "2025.07.11",
-      title: "\"hello world\" AIとお話しと基本の「き」",
+      title: "プロンプトエンジニアリング基本のき：\"hello world\" AIとお話しと基本の「き」",
       desc: "「ChatGPTを使ってみたけど、思ったような答えが返ってこない...」そんな経験ありませんか？プログラミング的思考でAIとの対話を劇的に改善する方法。",
       image: "/images/ai-category.jpg"
     },
     {
-      id: 2,
+      id: 3,
       category: "Writing",
       date: "2025.10.10",
       title: "【悪用厳禁？】あなたのnoteが驚くほど読まれる！今日からできる「魔法の誘導投稿」5つのコツ",
       desc: "「渾身のnote記事を書いたのに、全然読まれない…」そんな悩みを解決する、SNSからの誘導投稿テクニックを5つ紹介します。",
-      image: "/images/writing-category.jpg"
-    },
-    {
-      id: 3,
-      category: "AI",
-      date: "2024.11.25",
-      title: "ChatGPTを使った効率的なライティング",
-      desc: "AIをライティングパートナーとして活用する方法。プロンプトの書き方から、アウトプットの質を高めるコツまで。",
-      image: "/images/ai-category.jpg"
-    },
-    {
-      id: 4,
-      category: "AI",
-      date: "2024.11.22",
-      title: "Midjourneyで作る印象的なビジュアル",
-      desc: "AI画像生成ツールMidjourneyの基本的な使い方。プロンプトの構造とパラメータ調整の実践ガイド。",
-      image: "/images/hero-bg.jpg"
-    },
-    {
-      id: 5,
-      category: "Mind",
-      date: "2024.11.20",
-      title: "目標達成のフレームワーク",
-      desc: "漠然とした目標を具体的なアクションに落とし込む方法。SMARTゴール設定とOKRの活用法。",
-      image: "/images/columns-bg.jpg"
-    },
-    {
-      id: 6,
-      category: "Writing",
-      date: "2024.11.18",
-      title: "SEOライティングの基礎",
-      desc: "検索エンジンに評価される文章の書き方。キーワード選定からメタディスクリプションまで。",
       image: "/images/writing-category.jpg"
     }
   ];
@@ -75,7 +51,7 @@ export default function Columns() {
       {/* Filter Buttons */}
       <section className="container mb-12">
         <div className="flex flex-wrap gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
-          {["All", "Mind", "Writing", "AI"].map((cat) => (
+          {["All", "Money", "Writing", "AI"].map((cat) => (
             <Button
               key={cat}
               variant={filter === cat ? "default" : "outline"}
@@ -96,11 +72,12 @@ export default function Columns() {
       <section className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredArticles.map((article, index) => (
-            <Link key={article.id} href={article.id === 1 ? "/columns/ai-basics" : article.id === 2 ? "/columns/2" : "/columns"}>
-              <div 
-                className="group flex flex-col h-full bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-prism-cyan/50 hover:shadow-[0_0_30px_rgba(0,229,255,0.1)] transition-all duration-500 animate-in fade-in slide-in-from-bottom-8 cursor-pointer"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
+            <div key={article.id}>
+              <Link href={article.id === 1 ? "/columns/money-literacy" : article.id === 2 ? "/columns/ai-basics" : article.id === 3 ? "/columns/note-tips" : "/columns"}>
+                <div 
+                  className="group flex flex-col h-full bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-prism-cyan/50 hover:shadow-[0_0_30px_rgba(0,229,255,0.1)] transition-all duration-500 animate-in fade-in slide-in-from-bottom-8 cursor-pointer"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
                 <div className="relative aspect-video overflow-hidden">
                   <img 
                     src={article.image} 
@@ -124,8 +101,9 @@ export default function Columns() {
                     Read More →
                   </div>
                 </div>
-              </div>
-            </Link>
+                </div>
+              </Link>
+            </div>
           ))}
         </div>
       </section>

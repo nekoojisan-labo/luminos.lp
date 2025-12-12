@@ -12,13 +12,13 @@ import Courses from "./pages/Courses";
 import Gallery from "./pages/Gallery";
 import Columns from "./pages/Columns";
 import ColumnDetail from "./pages/ColumnDetail";
-import ColumnDetail2 from "./pages/ColumnDetail2";
-import MoneyLiteracy from "./pages/MoneyLiteracy";
+import MoneyLiteracy from "./pages/columns/MoneyLiteracy";
+import NoteTips from "./pages/columns/NoteTips";
 import Contact from "./pages/Contact";
 import Line from "./pages/Line";
 import NotFound from "./pages/NotFound";
-
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Layout>
       <Switch>
@@ -27,8 +27,8 @@ function Router() {
         <Route path="/gallery" component={Gallery} />
         <Route path="/columns" component={Columns} />
         <Route path="/columns/ai-basics" component={ColumnDetail} />
-        <Route path="/columns/2" component={ColumnDetail2} />
-        <Route path="/money-literacy" component={MoneyLiteracy} />
+        <Route path="/columns/money-literacy" component={MoneyLiteracy} />
+        <Route path="/columns/note-tips" component={NoteTips} />
         <Route path="/contact" component={Contact} />
         <Route path="/line" component={Line} />
         <Route component={NotFound} />

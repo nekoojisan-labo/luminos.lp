@@ -35,10 +35,12 @@ export default function ColumnDetail() {
             </span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3">
-            <span className="block">"hello world"</span>
-            <span className="block text-2xl md:text-3xl lg:text-4xl text-white/80 font-medium mt-2">AIとお話しと基本の「き」</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 text-balance">
+            "hello world"
           </h1>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium mb-6 text-white/90 leading-snug text-balance">
+            AIとお話しと基本の「き」
+          </h2>
           
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-white/10 overflow-hidden">
@@ -64,18 +66,26 @@ export default function ColumnDetail() {
           </p>
 
           <p>
-            今回は、プログラミングの超基礎を通して、AIとうまく付き合うための「設計準備の考え方」をお教えします。プログラミング経験はゼロでも大丈夫。日常会話のような親しみやすい内容で、「なるほど、そういうことか！」と腑に落ちる体験をしていただけると思います。
+            今回は、プログラミングの超基礎を通して、AIとうまく付き合うための「設計準備の考え方」をお教えします。
+          </p>
+
+          <p>
+            プログラミング経験はゼロでも大丈夫。日常会話のような親しみやすい内容で、「なるほど、そういうことか！」と腹に落ちる体験をしていただけると思います。
           </p>
 
           <h2 className="text-3xl font-bold mt-16 mb-8 text-prism-cyan">コンピューターとの「会話」とは何か</h2>
           
           <h3 className="text-2xl font-bold mt-12 mb-6">人間同士の会話 vs コンピューターとの会話</h3>
+          
           <p>
-            まず、普段の人間同士の会話を思い出してみてください。<br />
-            友人との会話例：<br />
-            あなた：「今度の土曜日、どこか行こうか」<br />
-            友人：「いいね！映画でも見る？」
+            まず、普段の人間同士の会話を思い出してみてください。
           </p>
+
+          <div className="bg-white/5 rounded-xl p-6 border border-white/10 my-6">
+            <p className="text-white leading-relaxed mb-2">友人との会話例：</p>
+            <p className="text-muted-foreground">あなた：「今度の土曜日、どこか行こうか」</p>
+            <p className="text-muted-foreground">友人：「いいね！映画でも見る？」</p>
+          </div>
           <p>
             この短いやり取りで、友人は以下のことを「察して」くれています：
           </p>
@@ -86,12 +96,21 @@ export default function ColumnDetail() {
             <li>お互いの好みを考慮</li>
           </ul>
           <p>
-            すごいですよね。たった一言で、これだけの情報を推測してくれるんです。
+            すごいですよね。
+          </p>
+
+          <p>
+            たった一言で、これだけの情報を推測してくれるんです。
           </p>
 
           <h3 className="text-2xl font-bold mt-12 mb-6">コンピューターが本当に理解できるのは「0」と「1」だけ</h3>
+          
           <p>
-            実は、コンピューターが本当に理解できるのは、「0」と「1」の組み合わせだけなんです。例えば、「Hello」という5文字をコンピューターはこんな風に認識しています：
+            実は、コンピューターが本当に理解できるのは、「0」と「1」の組み合わせだけなんです。
+          </p>
+
+          <p>
+            例えば、「Hello」という5文字をコンピューターはこんな風に認識しています：
           </p>
           <div className="bg-black/50 p-6 rounded-xl border border-white/10 font-mono text-sm my-6">
             H → 01001000<br />
@@ -101,12 +120,21 @@ export default function ColumnDetail() {
             o → 01101111
           </div>
           <p>
-            「なんじゃこりゃ？」って感じですよね。でも、これがコンピューターの「母国語」なんです。
+            「なんじゃこりゃ？」って感じですよね。
+          </p>
+
+          <p>
+            でも、これがコンピューターの「母国語」なんです。
           </p>
 
           <h2 className="text-3xl font-bold mt-16 mb-8 text-prism-cyan">AIも同じ仕組みで動いている</h2>
+          
           <p>
-            ChatGPTなどのAIも、基本的には同じ仕組みで動いています。あなたが入力した日本語は、以下のようなプロセスを経て処理されます：
+            ChatGPTなどのAIも、基本的には同じ仕組みで動いています。
+          </p>
+
+          <p>
+            あなたが入力した日本語は、以下のようなプロセスを経て処理されます：
           </p>
           <ol className="list-decimal pl-6 space-y-2 my-6">
             <li>トークン化（単語や文字の単位に分解）</li>
@@ -120,6 +148,7 @@ export default function ColumnDetail() {
           </p>
 
           <h2 className="text-3xl font-bold mt-16 mb-8 text-prism-cyan">なぜニュアンスが伝わらないのか</h2>
+          
           <p>
             この違いには、深い理由があります。
           </p>
@@ -146,9 +175,15 @@ export default function ColumnDetail() {
           </div>
 
           <h2 className="text-3xl font-bold mt-16 mb-8 text-prism-cyan">実際の例で見る「翻訳」の必要性</h2>
+          
           <p>
-            「今度の企画、どう思う？」とAIに聞くと、AIは困ってしまいます。「どの企画？」「何を評価したい？」「どんな観点で？」と。
+            「今度の企画、どう思う？」とAIに聞くと、AIは困ってしまいます。
           </p>
+
+          <p>
+            「どの企画？」「何を評価したい？」「どんな観点で？」と。
+          </p>
+
           <p>
             AIが理解できる形に「翻訳」すると、こうなります：
           </p>
@@ -174,11 +209,21 @@ export default function ColumnDetail() {
           </p>
 
           <h2 className="text-3xl font-bold mt-16 mb-8 text-prism-cyan">設計準備の考え方</h2>
+          
           <p>
-            プログラマーが複雑な問題に取り組むとき、必ずやるのが「分解」です。例えば、「ECサイトを作る」という大きなタスクを、「ユーザー登録」「商品表示」「決済機能」といった小さな部品に分けて、一つずつ解決していきます。
+            プログラマーが複雑な問題に取り組むとき、必ずやるのが「分解」です。
           </p>
+
           <p>
-            この「分解思考」は、普通の仕事でも威力を発揮します。「売上を上げたい」という漠然とした課題も、以下のように分解すると「何をすべきか」が明確になります。
+            例えば、「ECサイトを作る」という大きなタスクを、「ユーザー登録」「商品表示」「決済機能」といった小さな部品に分けて、一つずつ解決していきます。
+          </p>
+
+          <p>
+            この「分解思考」は、普通の仕事でも威力を発揮します。
+          </p>
+
+          <p>
+            「売上を上げたい」という漠然とした課題も、以下のように分解すると「何をすべきか」が明確になります。
           </p>
           <div className="bg-gradient-to-r from-prism-blue/10 to-prism-cyan/10 p-8 rounded-xl border border-prism-cyan/20 my-8">
             <h4 className="font-bold text-lg mb-4">売上アップの分解思考</h4>
@@ -199,9 +244,11 @@ export default function ColumnDetail() {
           </div>
 
           <h2 className="text-3xl font-bold mt-16 mb-8 text-prism-cyan">まとめ</h2>
+          
           <p>
             プログラミング的思考（分解、条件分岐、ループ）を取り入れることで、AIへの指示出し（プロンプトエンジニアリング）だけでなく、日常の業務改善や問題解決の質も劇的に向上します。
           </p>
+
           <p>
             まずは、目の前の課題を「分解」することから始めてみませんか？
           </p>

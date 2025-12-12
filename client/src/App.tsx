@@ -13,6 +13,7 @@ import Gallery from "./pages/Gallery";
 import Columns from "./pages/Columns";
 import ColumnDetail from "./pages/ColumnDetail";
 import ColumnDetail2 from "./pages/ColumnDetail2";
+import MoneyLiteracy from "./pages/MoneyLiteracy";
 import Contact from "./pages/Contact";
 import Line from "./pages/Line";
 import NotFound from "./pages/NotFound";
@@ -27,6 +28,7 @@ function Router() {
         <Route path="/columns" component={Columns} />
         <Route path="/columns/ai-basics" component={ColumnDetail} />
         <Route path="/columns/2" component={ColumnDetail2} />
+        <Route path="/money-literacy" component={MoneyLiteracy} />
         <Route path="/contact" component={Contact} />
         <Route path="/line" component={Line} />
         <Route component={NotFound} />

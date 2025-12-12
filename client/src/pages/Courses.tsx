@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Check, PlayCircle, FileText, Users, Clock } from "lucide-react";
+import { Check, PlayCircle, FileText, Users, Clock, DollarSign } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Courses() {
@@ -13,7 +13,7 @@ export default function Courses() {
             Learning <span className="text-transparent bg-clip-text bg-gradient-to-r from-prism-blue to-prism-magenta">Path</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 text-pretty">
-            3名の専門講師による、メンタル・ライティング・AI活用の総合的な学習プログラム。基礎から応用まで、体系的に学べるカリキュラムを用意しています。
+            専門講師による、メンタル・ライティング・AI活用・マネーリテラシーの総合的な学習プログラム。基礎から応用まで、体系的に学べるカリキュラムを用意しています。
           </p>
         </div>
       </section>
@@ -161,6 +161,60 @@ export default function Courses() {
                 <span>プロンプト集配布</span>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Course 4: Money Literacy */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="order-1">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-prism-yellow/10 border border-prism-yellow/20 text-prism-yellow text-xs font-bold mb-6">
+              Wealth
+            </div>
+            <h2 className="text-4xl font-bold mb-6">Money Literacy Master</h2>
+            <p className="text-muted-foreground text-lg mb-8 leading-relaxed text-pretty">
+              現役金融マン×ダイナミックマインドコーチが教える、本当の豊かさへの道。お金の知識とマインドセットの両輪で、真の豊かさを実現します。学校では教えてくれない金融知識を、わかりやすく丁寧にお伝えし、お子さんにも正しい金融教育を伝えられるようサポートします。
+            </p>
+            
+            <div className="space-y-4 mb-10">
+              {[
+                "お金に対する思い込みの解放",
+                "実践的な資金計画とリスク管理",
+                "親子で学ぶ金融リテラシー",
+                "夢を実現するための賢明な金融判断"
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-prism-yellow/20 flex items-center justify-center text-prism-yellow shrink-0">
+                    <Check className="w-3 h-3" />
+                  </div>
+                  <span className="font-medium">{item}</span>
+                </div>
+              ))}
+            </div>
+            
+            <div className="flex items-center gap-6 text-sm text-muted-foreground mb-8">
+              <div className="flex items-center gap-2">
+                <PlayCircle className="w-4 h-4" />
+                <span>動画講義 20本</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <FileText className="w-4 h-4" />
+                <span>実践ワークブック付</span>
+              </div>
+            </div>
+            
+            <Link href="/money-literacy">
+              <Button variant="outline" className="rounded-full border-prism-yellow/20 hover:bg-prism-yellow/10 text-prism-yellow">
+                詳しく見る
+              </Button>
+            </Link>
+          </div>
+          <div className="relative order-2">
+            <div className="absolute -inset-4 bg-prism-yellow/20 blur-3xl rounded-full"></div>
+            <img 
+              src="/images/mind-category.jpg" 
+              alt="Money Literacy Course" 
+              className="relative rounded-2xl border border-white/10 shadow-2xl w-full aspect-[4/3] object-cover"
+            />
           </div>
         </div>
       </section>

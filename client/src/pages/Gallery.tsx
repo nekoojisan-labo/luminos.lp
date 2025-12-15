@@ -7,13 +7,14 @@ export default function Gallery() {
   const [filter, setFilter] = useState("All");
 
   const works = [
-    { id: 1, title: "Neon Dreams", category: "AI Art", image: "/images/hero-bg.jpg", author: "Member A", type: "image" },
-    { id: 2, title: "Mind Flow", category: "Graphic", image: "/images/mind-category.jpg", author: "Member B", type: "image" },
-    { id: 3, title: "Cyber City", category: "AI Art", image: "/images/ai-category.jpg", author: "Member C", type: "image" },
-    { id: 4, title: "Golden Pen", category: "Photo", image: "/images/writing-category.jpg", author: "Member D", type: "image" },
-    { id: 5, title: "Abstract Waves", category: "Graphic", image: "/images/columns-bg.jpg", author: "Member E", type: "image" },
-    { id: 6, title: "Prism Light", category: "AI Art", image: "/images/hero-bg.jpg", author: "Member F", type: "image" },
-    { id: 7, title: "Network Loop", category: "Motion", image: "/images/abstract-network.mp4", author: "Member G", type: "video" },
+    { id: 1, title: "Winter Dance", category: "AI Art", image: "/images/gallery-1.jpeg", author: "Member A", type: "image" },
+    { id: 2, title: "Cafe Portrait", category: "AI Art", image: "/images/gallery-2.jpeg", author: "Member B", type: "image" },
+    { id: 3, title: "Steampunk Couple", category: "AI Art", image: "/images/gallery-3.jpeg", author: "Member C", type: "image" },
+    { id: 4, title: "Cyber Girl", category: "AI Art", image: "/images/gallery-4.jpeg", author: "Member D", type: "image" },
+    { id: 5, title: "Fantasy Queen", category: "AI Art", image: "/images/gallery-5.jpeg", author: "Member E", type: "image" },
+    { id: 6, title: "Samurai Master", category: "AI Art", image: "/images/gallery-6.jpeg", author: "Member F", type: "image" },
+    { id: 7, title: "Cyber Warrior", category: "AI Art", image: "/images/gallery-7.jpeg", author: "Member G", type: "image" },
+    { id: 8, title: "Dark Warrior", category: "AI Art", image: "/images/gallery-8.jpeg", author: "Member H", type: "image" },
   ];
 
   const filteredWorks = filter === "All" ? works : works.filter(work => work.category === filter);

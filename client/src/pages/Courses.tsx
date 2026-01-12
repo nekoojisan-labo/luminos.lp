@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Check, PlayCircle, FileText, Users, Clock, Sparkles, PenTool, Brain } from "lucide-react";
+import { Check, Sparkles, PenTool, Brain, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Courses() {
@@ -18,6 +18,55 @@ export default function Courses() {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section className="container mb-32">
+        <div className="max-w-lg mx-auto">
+          <div className="relative p-8 md:p-12 rounded-3xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 text-center">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-prism-blue to-prism-cyan text-white text-sm font-bold">
+              STANDARD PLAN
+            </div>
+            
+            <div className="mt-4 mb-8">
+              <span className="text-6xl md:text-7xl font-black text-white">¥5,980</span>
+              <span className="text-xl text-white/60 ml-2">/月</span>
+            </div>
+            
+            <p className="text-muted-foreground mb-8">
+              税込価格・いつでも解約可能
+            </p>
+            
+            <div className="space-y-4 text-left mb-10">
+              {[
+                "全コース・全講座が見放題",
+                "オンラインラウンジへの参加",
+                "メンバー限定コミュニティ",
+                "講師への質問・相談",
+                "月1回のライブセッション",
+                "メンバー限定イベント参加権"
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-prism-cyan/20 flex items-center justify-center text-prism-cyan shrink-0">
+                    <Check className="w-3 h-3" />
+                  </div>
+                  <span className="text-white/80">{item}</span>
+                </div>
+              ))}
+            </div>
+            
+            <Button 
+              size="lg" 
+              className="w-full rounded-full bg-white text-black hover:bg-white/90 font-bold text-lg h-14 shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all hover:scale-105" 
+              asChild
+              data-magnet
+            >
+              <Link href="/contact">
+                メンバーシップに参加する <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Lecturers Section */}
       <section className="container mb-32">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Our Lecturers</h2>
@@ -33,15 +82,15 @@ export default function Courses() {
             </div>
             <div className="p-8">
               <h3 className="text-2xl font-bold text-white mb-2">Lily</h3>
-              <p className="text-prism-pink text-sm font-bold mb-4">AI Creator / Designer</p>
+              <p className="text-prism-pink text-sm font-bold mb-4">マネー×マインド講師 / 認定心理士</p>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                （ここに紹介文が入ります。リリーさんの専門分野や、どのような視点で受講生をサポートするかなど、魅力的な紹介文を後ほど掲載いたします。）
+                金融業界16年×認定心理士として、「お金」と「心」の両面からあなたをサポート。「自分なんか…才能もない、能力もない」そんなあなたの味方でありたい。Threads4ヶ月で200万円超の収益を達成した実践メソッドと、現役大学院生として学ぶ心理学の知識で、マネーリテラシーとマインドセットの両輪から伴走します。コンサル実績500名超。知識を学ぶだけでなく、実践し結果を出すまで寄り添います。あなたの中に眠る可能性を一緒に開花させましょう。
               </p>
             </div>
           </div>
 
           {/* Lecturer 2: Nagi */}
-          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-prism-blue/50 transition-colors duration-500 group">
+          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-prism-cyan/50 transition-colors duration-500 group">
             <div className="aspect-square overflow-hidden">
               <img 
                 src="/images/lecturer_nagi.jpeg" 
@@ -51,9 +100,9 @@ export default function Courses() {
             </div>
             <div className="p-8">
               <h3 className="text-2xl font-bold text-white mb-2">Nagi</h3>
-              <p className="text-prism-blue text-sm font-bold mb-4">Prompt Engineer / Strategist</p>
+              <p className="text-prism-cyan text-sm font-bold mb-4">文章術×編集術講師 / 編集者・ライター歴35年</p>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                （ここに紹介文が入ります。なぎさんの専門分野や、どのような視点で受講生をサポートするかなど、魅力的な紹介文を後ほど掲載いたします。）
+                大手出版社での雑誌編集を経てフリーランスとして独立。数多くの書籍、Webメディアの編集・執筆に携わる。言葉の力を信じ、「伝わる」文章を追求。あなたの「書きたい」想いを、最高の形で読者に届けるお手伝いをします。「SNSで発信したいけど、文章が苦手…」「AIに書かせても、なんだか無個性な文章になっちゃう」そんな風に感じていませんか？AIを使いこなす「文章術」と「編集術」をお伝えします。あなた自身の「想い」や「人間味」を掛け合わせれば、誰にも真似できない、あなただけの魅力的な文章が書けるようになりますよ。いくつになっても挑戦がモットー。文章で悩むあなたの味方になれたら嬉しいです！
               </p>
             </div>
           </div>
@@ -69,9 +118,9 @@ export default function Courses() {
             </div>
             <div className="p-8">
               <h3 className="text-2xl font-bold text-white mb-2">nekoojisan</h3>
-              <p className="text-prism-purple text-sm font-bold mb-4">Founder / Mentor</p>
+              <p className="text-prism-purple text-sm font-bold mb-4">AI講師 / Founder</p>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                （ここに紹介文が入ります。nekoojisanの専門分野や、どのような視点で受講生をサポートするかなど、魅力的な紹介文を後ほど掲載いたします。）
+                AI関連を担当します。プロンプト作りや、動画、画像などの生成が得意。AI情報の発信、プロンプト作りや動画の構成づくりなど、または何か作るにあたっての考え方、AIへの質問力を上げるお手伝いをします。初心者でも大丈夫！質問には全力でお答えしますよ！
               </p>
             </div>
           </div>
@@ -194,172 +243,6 @@ export default function Courses() {
             </div>
           </div>
         </div>
-
-        {/* Topic 4: Money Literacy */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="order-1">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-prism-yellow/10 border border-prism-yellow/20 text-prism-yellow text-xs font-bold mb-6">
-              Financial Wisdom
-            </div>
-            <h2 className="text-4xl font-bold mb-6">Money Literacy</h2>
-            <p className="text-muted-foreground text-lg mb-8 leading-relaxed text-pretty">
-              現役金融マン×ダイナミックマインドコーチが語る、本当の豊かさへの道。
-            </p>
-            
-            <div className="space-y-4 mb-10">
-              {[
-                "お金とマインドセットの統合的アプローチ",
-                "実践的な金融知識と資金計画",
-                "心理学・認知科学で紐解くお金のブロック",
-                "親子で学ぶ金融教育の基礎"
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-prism-yellow/20 flex items-center justify-center text-prism-yellow shrink-0">
-                    <Check className="w-3 h-3" />
-                  </div>
-                  <span className="font-medium">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="relative order-2">
-            <div className="absolute -inset-4 bg-prism-yellow/20 blur-3xl rounded-full"></div>
-            <div className="relative rounded-2xl border border-white/10 bg-black/50 p-8 aspect-[4/3] flex items-center justify-center overflow-hidden">
-               <div className="absolute inset-0 bg-gradient-to-br from-prism-yellow/10 to-transparent opacity-50"></div>
-               <svg className="w-32 h-32 text-prism-yellow opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-               </svg>
-            </div>
-          </div>
-        </div>
-
-        {/* Money Literacy Article Section */}
-        <div className="mt-32 max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-3xl p-8 md:p-12">
-            <div className="prose prose-invert prose-lg max-w-none">
-              <h3 className="text-3xl font-bold mb-6 text-white">現役金融マン×ダイナミックマインドコーチが語る、本当の豊かさへの道</h3>
-              
-              <div className="border-l-4 border-prism-pink pl-6 my-8">
-                <h4 className="text-xl font-bold mb-4 text-white">はじめに</h4>
-                <p className="text-muted-foreground leading-relaxed">
-                  こんにちは。私は現役金融マンとして長年、お金と向き合ってきました。同時に、ダイナミックマインドコーチとして、多くの方の内面の輝きを引き出すお手伝いをしています。
-                </p>
-                <p className="text-muted-foreground leading-relaxed mt-4">
-                  この二つの経験から、私は確信しています。<strong className="text-white">真の豊かさは、お金の知識とマインドセットの両輪があってこそ実現する</strong>のだと。
-                </p>
-              </div>
-
-              <div className="space-y-8 mt-12">
-                <div>
-                  <h4 className="text-2xl font-bold mb-4 text-white">なぜ「お金の知識」と「マインドセット」なのか？</h4>
-                  
-                  <h5 className="text-xl font-semibold mb-3 text-prism-blue">お金の知識だけでは足りない理由</h5>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    金融の現場で働いていると、こんな方々に出会います。
-                  </p>
-                  <ul className="space-y-2 mb-4">
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <span className="text-prism-pink mt-1">•</span>
-                      <span>十分な収入があるのに、いつもお金の不安を抱えている人</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <span className="text-prism-pink mt-1">•</span>
-                      <span>資産運用の知識はあるのに、なかなか行動に移せない人</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <span className="text-prism-pink mt-1">•</span>
-                      <span>節約しているのに、なぜか心が満たされない人</span>
-                    </li>
-                  </ul>
-                  <p className="text-muted-foreground leading-relaxed">
-                    これらの問題の根本には、実は「マインドセット」の問題が隠れています。どれだけ金融知識を持っていても、自分自身の内面が整っていなければ、お金との健全な関係は築けないのです。
-                  </p>
-
-                  <h5 className="text-xl font-semibold mb-3 mt-6 text-prism-purple">マインドセットだけでも不十分</h5>
-                  <p className="text-muted-foreground leading-relaxed">
-                    一方で、どれだけ前向きな気持ちを持っていても、現実的な金融知識なしには、夢を具体的な形にすることは難しいものです。理想を実現するには、適切な資金計画、リスク管理、そして賢明な金融判断が必要です。
-                  </p>
-                  <p className="text-white font-semibold mt-4">
-                    だからこそ、この二つを統合することが重要なのです。
-                  </p>
-                </div>
-
-                <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
-                  <h4 className="text-2xl font-bold mb-6 text-white">LUMINOUSで学べる3つの柱</h4>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h5 className="text-lg font-semibold mb-2 text-prism-magenta">1. マインドセットの変革：心理学・認知科学で「自分」を紐解く</h5>
-                      <p className="text-muted-foreground leading-relaxed">
-                        「私なんて何もできない」「自分には価値がない」「どうせ無理」——こうした言葉が、心の中で繰り返されていませんか？ 実は、これらの思い込みは、長年の経験や環境によって無意識のうちに形成された認知のパターンです。LUMINOUSでは、心理学と認知科学の知見を活用しながら、これらのパターンを丁寧に紐解いていきます。
-                      </p>
-                    </div>
-
-                    <div>
-                      <h5 className="text-lg font-semibold mb-2 text-prism-cyan">2. 実践的な金融知識：現役金融マンが教える本当に役立つお金の話</h5>
-                      <p className="text-muted-foreground leading-relaxed">
-                        理論だけでなく、現場で培った実践的な知識をお伝えします。日本の学校教育では、お金のことをほとんど教えてくれません。だからこそ、多くの人が大人になってから「お金のことがわからない」と悩んでいるのです。そして、あなた自身が学ぶことで、お子さんにも正しい金融教育を伝えることができるようになります。
-                      </p>
-                    </div>
-
-                    <div>
-                      <h5 className="text-lg font-semibold mb-2 text-prism-green">3. 統合：知識とマインドを行動につなげる</h5>
-                      <p className="text-muted-foreground leading-relaxed">
-                        知っているだけでは意味がありません。LUMINOUSでは、学んだことを実際の行動に移すためのサポートも行います。個人の価値観に合った資金計画の立て方、恐れを乗り越えて一歩を踏み出す方法、継続的に学び、成長し続けるコミュニティ作りを大切にしています。
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="text-2xl font-bold mb-4 text-white">こんな方におすすめです</h4>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <span className="text-prism-pink mt-1 text-xl">✓</span>
-                      <span>お金のことを学びたいけど、何から始めればいいかわからない方</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <span className="text-prism-pink mt-1 text-xl">✓</span>
-                      <span>収入はあるのに、なぜかお金が貯まらない方</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <span className="text-prism-pink mt-1 text-xl">✓</span>
-                      <span>将来の不安を解消し、自信を持って人生を歩みたい方</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <span className="text-prism-pink mt-1 text-xl">✓</span>
-                      <span>自分の夢や目標を実現するための具体的な方法を知りたい方</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <span className="text-prism-pink mt-1 text-xl">✓</span>
-                      <span>お金に対する罪悪感やブロックを手放したい方</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="border-t border-white/10 pt-8">
-                  <h4 className="text-2xl font-bold mb-4 text-white">最後に：あなたの「秘めたる想い」を輝かせるために</h4>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    お金は、あなたの夢を実現するための強力なツールです。そして、その夢を描き、実現していく力は、あなたの内側にすでに存在しています。
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    必要なのは、正しい知識と、自分自身を信じるマインドセット。そして、一歩を踏み出す勇気です。
-                  </p>
-                  <p className="text-white font-semibold text-lg">
-                    あなたの輝きが、世界を照らす光になる。
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed mt-4">
-                    LUMINOUSは、そのための場所です。共に学び、共に成長し、共に輝きましょう。
-                  </p>
-                  <p className="text-right text-muted-foreground mt-8 italic">
-                    現役金融マン×ダイナミックマインドコーチ<br />
-                    リリーより
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* CTA */}
@@ -369,11 +252,11 @@ export default function Courses() {
           
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">学びを始める準備はできましたか？</h2>
           <p className="text-muted-foreground text-lg mb-10 max-w-2xl mx-auto text-pretty">
-            LUMINOUSメンバーシップに参加して、全てのコースにアクセスしましょう。あなたのペースで、好きな場所から学びをスタートできます。
+            月額5,980円で全てのコースにアクセス。あなたのペースで、好きな場所から学びをスタートできます。
           </p>
           <Link href="/contact">
             <Button size="lg" className="h-14 px-10 rounded-full bg-white text-black hover:bg-white/90 font-bold">
-              メンバーシップ詳細を見る
+              メンバーシップに参加する
             </Button>
           </Link>
         </div>

@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { PixelTransitionOverlay } from "./PageTransition";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
@@ -32,6 +34,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-prism-cyan/30 selection:text-prism-cyan">
+      {/* Pixel Transition Overlay */}
+      <PixelTransitionOverlay />
+
       {/* Header */}
       <header
         className={cn(
@@ -43,7 +48,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       >
         <div className="container flex items-center justify-between">
           <Link href="/">
-            <a className="text-2xl font-bold tracking-tighter hover:opacity-80 transition-opacity">
+            <a className="text-2xl font-bold tracking-tighter hover:opacity-80 transition-opacity" data-magnet>
               LUMINOUS
             </a>
           </Link>
@@ -73,6 +78,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Link href="/line">
               <Button
                 className="bg-gradient-to-r from-prism-blue to-prism-cyan hover:opacity-90 text-white border-0 rounded-full px-6"
+                data-magnet
               >
                 Join Now
               </Button>
@@ -85,40 +91,80 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X /> : <Menu />}
+            <AnimatePresence mode="wait">
+              {isMobileMenuOpen ? (
+                <motion.div
+                  key="close"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <X />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="menu"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Menu />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </button>
         </div>
       </header>
 
       {/* Mobile Menu Overlay */}
-      <div
-        className={cn(
-          "fixed inset-0 z-40 bg-background/95 backdrop-blur-xl transition-all duration-300 md:hidden flex flex-col items-center justify-center gap-8",
-          isMobileMenuOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        )}
-      >
-        {navLinks.map((link) => (
-          <Link key={link.href} href={link.href}>
-            <a
-              className={cn(
-                "text-2xl font-bold transition-colors hover:text-prism-cyan",
-                location === link.href ? "text-prism-cyan" : "text-foreground"
-              )}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-xl md:hidden flex flex-col items-center justify-center gap-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {navLinks.map((link, index) => (
+              <motion.div
+                key={link.href}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+              >
+                <Link href={link.href}>
+                  <a
+                    className={cn(
+                      "text-2xl font-bold transition-colors hover:text-prism-cyan",
+                      location === link.href ? "text-prism-cyan" : "text-foreground"
+                    )}
+                  >
+                    {link.label}
+                  </a>
+                </Link>
+              </motion.div>
+            ))}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3, delay: navLinks.length * 0.05 }}
             >
-              {link.label}
-            </a>
-          </Link>
-        ))}
-        <Link href="/line">
-          <Button className="bg-gradient-to-r from-prism-blue to-prism-cyan text-white border-0 rounded-full px-8 py-6 text-lg mt-4">
-            Join Now
-          </Button>
-        </Link>
-      </div>
+              <Link href="/line">
+                <Button className="bg-gradient-to-r from-prism-blue to-prism-cyan text-white border-0 rounded-full px-8 py-6 text-lg mt-4">
+                  Join Now
+                </Button>
+              </Link>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-      {/* Main Content */}
+      {/* Main Content - No wrapper, direct children */}
       <main className="pt-0 min-h-screen flex flex-col">
         {children}
       </main>

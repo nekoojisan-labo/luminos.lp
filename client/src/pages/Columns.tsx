@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { useState } from "react";
+import { ScrollReveal, StaggerContainer } from "@/components/ScrollReveal";
+import { TextReveal } from "@/components/TextReveal";
+import { motion } from "framer-motion";
 
 export default function Columns() {
   const [filter, setFilter] = useState("All");
@@ -38,74 +41,97 @@ export default function Columns() {
     <div className="pt-24 pb-20">
       <section className="container mb-16">
         <div className="max-w-3xl">
-          <span className="text-prism-green font-bold tracking-wider uppercase text-sm mb-4 block animate-in fade-in slide-in-from-bottom-4 duration-700">Free Columns</span>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
+          <ScrollReveal direction="up" delay={0}>
+            <span className="text-prism-green font-bold tracking-wider uppercase text-sm mb-4 block">Free Columns</span>
+          </ScrollReveal>
+          
+          <TextReveal className="text-5xl md:text-7xl font-black tracking-tighter mb-6" delay={0.1}>
             Knowledge <span className="text-transparent bg-clip-text bg-gradient-to-r from-prism-green to-prism-blue">Base</span>
-          </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 text-pretty">
-            マインドセット、ライティング技術、AI活用法に関する学習コンテンツを無料で公開しています。あなたの活動に役立つヒントを見つけてください。
-          </p>
+          </TextReveal>
+          
+          <ScrollReveal direction="up" delay={0.2}>
+            <p className="text-xl text-muted-foreground leading-relaxed text-pretty">
+              マインドセット、ライティング技術、AI活用法に関する学習コンテンツを無料で公開しています。あなたの活動に役立つヒントを見つけてください。
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Filter Buttons */}
       <section className="container mb-12">
-        <div className="flex flex-wrap gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
-          {["All", "Money", "Writing", "AI"].map((cat) => (
-            <Button
-              key={cat}
-              variant={filter === cat ? "default" : "outline"}
-              onClick={() => setFilter(cat)}
-              className={`rounded-full px-6 ${
-                filter === cat 
-                  ? "bg-white text-black hover:bg-white/90 border-transparent" 
-                  : "bg-transparent border-white/20 text-white hover:bg-white/10"
-              }`}
-            >
-              {cat}
-            </Button>
-          ))}
-        </div>
+        <ScrollReveal direction="left" delay={0.3}>
+          <div className="flex flex-wrap gap-4">
+            {["All", "Money", "Writing", "AI"].map((cat) => (
+              <Button
+                key={cat}
+                variant={filter === cat ? "default" : "outline"}
+                onClick={() => setFilter(cat)}
+                className={`rounded-full px-6 transition-all duration-300 ${
+                  filter === cat 
+                    ? "bg-white text-black hover:bg-white/90 border-transparent" 
+                    : "bg-transparent border-white/20 text-white hover:bg-white/10"
+                }`}
+                data-magnet
+              >
+                {cat}
+              </Button>
+            ))}
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* Articles Grid */}
       <section className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          layout
+        >
           {filteredArticles.map((article, index) => (
-            <div key={article.id}>
+            <motion.div 
+              key={article.id}
+              layout
+              initial={{ opacity: 0, x: -50, rotateY: 15, scale: 0.9 }}
+              animate={{ opacity: 1, x: 0, rotateY: 0, scale: 1 }}
+              exit={{ opacity: 0, x: 50, rotateY: -15, scale: 0.9 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: index * 0.1,
+                ease: [0.16, 1, 0.3, 1]
+              }}
+              style={{ perspective: 1000 }}
+            >
               <Link href={article.id === 1 ? "/columns/money-literacy" : article.id === 2 ? "/columns/ai-basics" : article.id === 3 ? "/columns/note-tips" : "/columns"}>
                 <div 
-                  className="group flex flex-col h-full bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-prism-cyan/50 hover:shadow-[0_0_30px_rgba(0,229,255,0.1)] transition-all duration-500 animate-in fade-in slide-in-from-bottom-8 cursor-pointer"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  className="group flex flex-col h-full bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-prism-cyan/50 hover:shadow-[0_0_30px_rgba(0,229,255,0.1)] transition-all duration-500 cursor-pointer"
                 >
-                <div className="relative aspect-video overflow-hidden">
-                  <img 
-                    src={article.image} 
-                    alt={article.title} 
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 left-4 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full text-xs font-bold border border-white/10">
-                    {article.category}
+                  <div className="relative aspect-video overflow-hidden">
+                    <img 
+                      src={article.image} 
+                      alt={article.title} 
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute top-4 left-4 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full text-xs font-bold border border-white/10">
+                      {article.category}
+                    </div>
                   </div>
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <div className="text-xs text-muted-foreground mb-3">{article.date}</div>
-                  <h3 className="text-xl font-bold mb-3 leading-snug group-hover:text-prism-cyan transition-colors">
-                    {article.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-grow">
-                    {article.desc}
-                  </p>
-                  <div className="text-sm font-bold text-prism-cyan flex items-center gap-2 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                    Read More →
+                  <div className="p-6 flex flex-col flex-grow">
+                    <div className="text-xs text-muted-foreground mb-3">{article.date}</div>
+                    <h3 className="text-xl font-bold mb-3 leading-snug group-hover:text-prism-cyan transition-colors">
+                      {article.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-grow">
+                      {article.desc}
+                    </p>
+                    <div className="text-sm font-bold text-prism-cyan flex items-center gap-2 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                      Read More →
+                    </div>
                   </div>
-                </div>
                 </div>
               </Link>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
     </div>
   );

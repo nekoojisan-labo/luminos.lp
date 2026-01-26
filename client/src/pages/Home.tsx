@@ -11,7 +11,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section with Parallax */}
       <ParallaxBackground
-        imageSrc="/images/hero-bg-restored.png"
+        imageSrc="/images/hero-bg-restored.webp"
         imageAlt="LUMINOUS Hero Background"
         speed={0.3}
         className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
@@ -245,7 +245,7 @@ export default function Home() {
             <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-prism-pink/50 transition-colors duration-500 group">
               <div className="aspect-square overflow-hidden">
                 <img 
-                  src="/images/lecturer_lily.png" 
+                  src="/images/lecturer_lily.webp" 
                   alt="Lily" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -263,7 +263,7 @@ export default function Home() {
             <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-prism-cyan/50 transition-colors duration-500 group">
               <div className="aspect-square overflow-hidden">
                 <img 
-                  src="/images/lecturer_nagi.jpeg" 
+                  src="/images/lecturer_nagi.webp" 
                   alt="Nagi" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -281,7 +281,7 @@ export default function Home() {
             <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-prism-purple/50 transition-colors duration-500 group">
               <div className="aspect-square overflow-hidden">
                 <img 
-                  src="/images/lecturer_nekoojisan.jpeg" 
+                  src="/images/lecturer_nekoojisan.webp" 
                   alt="nekoojisan" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -318,10 +318,10 @@ export default function Home() {
             direction="right"
           >
             {[
-              { src: "/images/community_lounge_new.png", alt: "Community Lounge", label: "オンラインラウンジでの交流" },
-              { src: "/images/community_chat.png", alt: "Community Chat", label: "活発なチャットコミュニケーション" },
-              { src: "/images/community_slide.png", alt: "Learning Materials", label: "充実した学習資料と講座" },
-              { src: "/images/community_gemini.png", alt: "AI Tools Practice", label: "実践的なAIツールの活用" },
+              { src: "/images/community_lounge_new.webp", alt: "Community Lounge", label: "オンラインラウンジでの交流" },
+              { src: "/images/community_chat.webp", alt: "Community Chat", label: "活発なチャットコミュニケーション" },
+              { src: "/images/community_slide.webp", alt: "Learning Materials", label: "充実した学習資料と講座" },
+              { src: "/images/community_gemini.webp", alt: "AI Tools Practice", label: "実践的なAIツールの活用" },
             ].map((item, i) => (
               <div key={i} className="relative aspect-[4/3] rounded-2xl overflow-hidden group">
                 <img 

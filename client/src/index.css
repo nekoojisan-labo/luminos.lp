@@ -192,15 +192,20 @@
    ============================================ */
 
 @layer utilities {
-  /* Gradient Animation for Text */
+  /* Gradient Animation for Text - GPUアクセラレーション対応 */
   .animate-gradient-x {
-    background-size: 200% 100%;
+    background-size: 300% 100%;
     animation: gradient-x 3s ease infinite;
+    will-change: transform;
+    transform: translateZ(0);
   }
 
-  /* Mesh Gradient Animation for Background */
+  /* Mesh Gradient Animation for Background - GPUアクセラレーション対応 */
   .animate-mesh-gradient {
     animation: mesh-gradient 15s ease infinite;
+    will-change: transform;
+    transform: translateZ(0);
+    background-size: 150% 150%;
   }
 
   /* Pulse Glow Animation */
@@ -221,27 +226,28 @@
 }
 
 /* Keyframe Animations */
+/* GPUアクセラレーション対応: transformを使用 */
 @keyframes gradient-x {
   0%, 100% {
-    background-position: 0% 50%;
+    transform: translateX(0%);
   }
   50% {
-    background-position: 100% 50%;
+    transform: translateX(-50%);
   }
 }
 
 @keyframes mesh-gradient {
   0%, 100% {
-    background-position: 0% 0%;
+    transform: translate(0%, 0%);
   }
   25% {
-    background-position: 100% 0%;
+    transform: translate(-25%, 0%);
   }
   50% {
-    background-position: 100% 100%;
+    transform: translate(-25%, -25%);
   }
   75% {
-    background-position: 0% 100%;
+    transform: translate(0%, -25%);
   }
 }
 

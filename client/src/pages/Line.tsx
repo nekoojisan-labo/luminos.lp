@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, CreditCard } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Line() {
   return (
@@ -54,6 +55,42 @@ export default function Line() {
         </div>
       </section>
 
+      {/* 有料メンバーシップセクション */}
+      <section className="container mt-20 max-w-4xl">
+        <div className="bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 border border-white/10 rounded-3xl p-8 md:p-12 text-center animate-in fade-in slide-in-from-bottom-8 duration-700 delay-400">
+          <span className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-xs font-bold mb-6">
+            PREMIUM MEMBERSHIP
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            本格的に学びたい方へ
+          </h2>
+          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+            全コース・全講座が見放題の有料メンバーシップ。<br />
+            講師への直接質問やライブセッションなど、充実のサポート体制。
+          </p>
+          
+          <div className="flex items-baseline justify-center gap-1 mb-8">
+            <span className="text-lg text-muted-foreground">月額</span>
+            <span className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              ¥5,980
+            </span>
+            <span className="text-lg text-muted-foreground">（税込）</span>
+          </div>
+
+          <Link href="/payment">
+            <Button size="lg" className="h-16 px-12 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-bold text-lg shadow-lg shadow-cyan-500/20 transition-all hover:scale-105">
+              <CreditCard className="mr-3 w-6 h-6" />
+              有料メンバーシップに申し込む
+              <ArrowRight className="ml-3 w-6 h-6" />
+            </Button>
+          </Link>
+          
+          <p className="text-xs text-muted-foreground mt-6">
+            ※ PayPalまたはクレジットカードでお支払いいただけます
+          </p>
+        </div>
+      </section>
+
       <section className="container mt-20 text-center max-w-2xl">
         <h3 className="text-xl font-bold mb-4">よくある質問</h3>
         <div className="space-y-6 text-left">
@@ -63,7 +100,11 @@ export default function Line() {
           </div>
           <div className="bg-white/5 border border-white/10 rounded-xl p-6">
             <h4 className="font-bold mb-2 text-prism-cyan">Q. 費用はかかりますか？</h4>
-            <p className="text-muted-foreground text-sm">A. LINE登録と一部コンテンツは無料です。より深い学びを希望される方向けの有料プランもご用意しています。</p>
+            <p className="text-muted-foreground text-sm">A. LINE登録と一部コンテンツは無料です。より深い学びを希望される方向けの有料プラン（月額5,980円）もご用意しています。</p>
+          </div>
+          <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+            <h4 className="font-bold mb-2 text-prism-cyan">Q. 有料プランはいつでも解約できますか？</h4>
+            <p className="text-muted-foreground text-sm">A. はい、サブスクリプションはいつでもキャンセル可能です。PayPalの管理画面から簡単に解約できます。</p>
           </div>
         </div>
       </section>

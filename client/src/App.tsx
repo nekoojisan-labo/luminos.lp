@@ -16,6 +16,7 @@ import MoneyLiteracy from "./pages/columns/MoneyLiteracy";
 import NoteTips from "./pages/columns/NoteTips";
 import Contact from "./pages/Contact";
 import Line from "./pages/Line";
+import Payment from "./pages/Payment";
 import NotFound from "./pages/NotFound";
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -31,6 +32,7 @@ function Router() {
         <Route path="/columns/note-tips" component={NoteTips} />
         <Route path="/contact" component={Contact} />
         <Route path="/line" component={Line} />
+        <Route path="/payment" component={Payment} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

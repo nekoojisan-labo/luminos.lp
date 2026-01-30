@@ -47,10 +47,12 @@ export default function Line() {
             <p className="text-lg font-bold mb-2">スマホでスキャンして登録</p>
             <p className="text-sm text-muted-foreground mb-8">または下のボタンをクリック</p>
             
-            <Button size="lg" className="w-full h-14 rounded-full bg-[#06C755] hover:bg-[#05b54c] text-white font-bold text-lg shadow-lg shadow-[#06C755]/20">
-              LINEで友だち追加
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <a href="https://line.me/R/ti/p/@665edwjz" target="_blank" rel="noopener noreferrer" className="w-full">
+              <Button size="lg" className="w-full h-14 rounded-full bg-[#06C755] hover:bg-[#05b54c] text-white font-bold text-lg shadow-lg shadow-[#06C755]/20">
+                LINEで友だち追加
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </a>
           </div>
         </div>
       </section>

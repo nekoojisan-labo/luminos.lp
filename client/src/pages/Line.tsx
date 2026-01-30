@@ -40,17 +40,28 @@ export default function Line() {
 
           {/* QR Code / Action Card */}
           <div className="bg-gradient-to-br from-prism-green/20 to-prism-blue/20 border border-white/10 rounded-3xl p-8 md:p-10 flex flex-col items-center justify-center text-center animate-in fade-in slide-in-from-right-8 duration-700 delay-300">
-            <div className="w-48 h-48 bg-white rounded-xl mb-8 flex items-center justify-center">
-              {/* Placeholder for QR Code */}
-              <div className="text-black font-bold text-lg">QR CODE</div>
+            <div className="p-4 bg-white rounded-2xl shadow-[0_0_30px_rgba(0,255,0,0.2)] mb-8">
+              <img 
+                src="https://qr-official.line.me/gs/M_665edwjz_GW.png?oat_content=qr" 
+                alt="LINE QR Code" 
+                className="w-40 h-40 object-contain"
+              />
             </div>
             <p className="text-lg font-bold mb-2">スマホでスキャンして登録</p>
             <p className="text-sm text-muted-foreground mb-8">または下のボタンをクリック</p>
             
-            <a href="https://line.me/R/ti/p/@665edwjz" target="_blank" rel="noopener noreferrer" className="w-full">
-              <Button size="lg" className="w-full h-14 rounded-full bg-[#06C755] hover:bg-[#05b54c] text-white font-bold text-lg shadow-lg shadow-[#06C755]/20">
+            <a 
+              href="https://line.me/R/ti/p/@665edwjz" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-full"
+            >
+              <Button size="lg" className="w-full h-14 rounded-full bg-[#06C755] hover:bg-[#05b54c] text-white font-bold text-lg shadow-lg shadow-[#06C755]/20 flex items-center justify-center gap-2">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                  <path d="M12 2.5C6.5 2.5 2 6.6 2 11.7c0 2.9 1.4 5.5 3.8 7.2.2.1.4.4.3.7-.1.5-.4 1.8-.4 1.9 0 .2.1.4.3.4.1 0 .1 0 .2-.1 1.9-.5 4.1-1.2 4.3-1.2.2 0 .5.1.7.1 1 .1 1.9.1 2.8.1 5.5 0 10-4.1 10-9.2S17.5 2.5 12 2.5z"/>
+                </svg>
                 LINEで友だち追加
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="w-5 h-5" />
               </Button>
             </a>
           </div>
